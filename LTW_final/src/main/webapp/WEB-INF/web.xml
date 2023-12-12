@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+  <display-name>LTW-final</display-name>
+  <welcome-file-list>
+    <welcome-file>HomePage.html</welcome-file>
+    <welcome-file>HomePage.htm</welcome-file>
+    <welcome-file>HomePage.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <error-page>
+        <error-code>404</error-code>
+        <location>/404.jsp</location>
+  </error-page>
+  <error-page>
+        <error-code>405</error-code>
+        <location>/405.jsp</location>
+  </error-page>
+</web-app>
