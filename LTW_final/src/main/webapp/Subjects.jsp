@@ -52,6 +52,7 @@
 										<th>Subject ID</th>
 										<th>Subject Name</th>
 										<th>Number of credits</th>
+										<th class="text-center" colspan="3"> </th>
 									</tr>
 
 									<c:forEach var="item" items="${ListSubjects}">
@@ -67,12 +68,14 @@
 											</span></td>
 											<td><span>
 													<button type="button"
-														class="btn btn-primary btn-rounded btn-sm my-0">
+														class="btn btn-primary btn-rounded btn-sm my-0"
+														onclick="location.href='/LTW_final/EditSubject?subjectID=${item.getSubjectID()}'">
 														Edit</button>
 											</span></td>
 											<td><span class="table-remove edit">
 													<button type="button"
-														class="btn btn-danger btn-rounded btn-sm my-0">
+														class="btn btn-danger btn-rounded btn-sm my-0"
+														onclick="location.href='/LTW_final/DeleteSubject?subjectID=${item.getSubjectID()}'">
 														Remove</button>
 											</span></td>
 										</tr>

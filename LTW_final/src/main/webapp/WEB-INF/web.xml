@@ -27,4 +27,24 @@
     <servlet-name>SubjectServlet</servlet-name>
     <url-pattern>/SubjectServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteSubject</display-name>
+    <servlet-name>DeleteSubject</servlet-name>
+    <servlet-class>com.java.be.DeleteSubject</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteSubject</servlet-name>
+    <url-pattern>/DeleteSubject</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EditSubject</display-name>
+    <servlet-name>EditSubject</servlet-name>
+    <servlet-class>com.java.be.EditSubject</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditSubject</servlet-name>
+    <url-pattern>/EditSubject</url-pattern>
+  </servlet-mapping>
 </web-app>
