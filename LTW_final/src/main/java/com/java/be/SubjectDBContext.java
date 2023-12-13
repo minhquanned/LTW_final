@@ -39,7 +39,6 @@ public class SubjectDBContext {
 			
 			while (rs.next()) {
 				String subjectID = rs.getString("subjectID");
-				System.out.println(subjectID);
 				String subjectName = rs.getString("subjectName");
 				String noC = rs.getString("noC");
 				

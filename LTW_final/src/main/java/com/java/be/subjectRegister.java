@@ -39,8 +39,9 @@ public class subjectRegister extends HttpServlet {
 			pstm.close();
             c.close();
             
-            String url = "/Subjects.jsp";
-            getServletContext().getRequestDispatcher(url).forward(req, res);
+            String url = "/LTW_final/viewSubject";
+//            getServletContext().getRequestDispatcher(url).forward(req, res);
+            res.sendRedirect(url);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

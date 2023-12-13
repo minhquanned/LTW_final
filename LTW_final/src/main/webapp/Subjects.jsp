@@ -30,7 +30,7 @@
 							<h3 class="mb-4 pb-2 pb-md-0 mb-md-5 text-center">
 								<button type="button"
 									class="btn btn-danger btn-rounded btn-sm my-0"
-									onclick="history.back()">
+									onclick="location.href='/LTW_final'">
 									<i class="fa-solid fa-chevron-left"></i>
 								</button>
 								Subjects List
@@ -53,28 +53,9 @@
 										<th>Subject Name</th>
 										<th>Number of credits</th>
 									</tr>
-									<tr>
-										<td>LSD</td>
-										<td>Đảng's history ._.</td>
-										<td>2</td>
-										<td><span class="table-remove edit">
-												<button type="button"
-													class="btn btn-primary btn-rounded btn-sm my-0"
-													onclick="moreInfo()">More Info</button>
-										</span></td>
-										<td><span>
-												<button type="button"
-													class="btn btn-primary btn-rounded btn-sm my-0">
-													Edit</button>
-										</span></td>
-										<td><span class="table-remove edit">
-												<button type="button"
-													class="btn btn-danger btn-rounded btn-sm my-0">
-													Remove</button>
-										</span></td>
-									</tr>
-									
+
 									<c:forEach var="item" items="${ListSubjects}">
+
 										<tr>
 											<td>${item.getSubjectID()}</td>
 											<td>${item.getSubjectName()}</td>
@@ -82,7 +63,7 @@
 											<td><span class="table-remove edit">
 													<button type="button"
 														class="btn btn-primary btn-rounded btn-sm my-0"
-														onclick="moreInfo()">More Info</button>
+														onclick="moreInfo('${item.getSubjectID()}','${item.getSubjectName()}','${item.getNoC()}')">More Info</button>
 											</span></td>
 											<td><span>
 													<button type="button"
@@ -97,15 +78,18 @@
 										</tr>
 
 									</c:forEach>
+
+									<script type="text/javascript">
+										function moreInfo(subjectID, subjectName, noC) {
+											alert("Subject ID: " + subjectID
+													+ "\nSubject Name: " + subjectName
+													+ "\nNumber of credits: " + noC);
+										}
+									</script>
+
 								</table>
 
-								<script type="text/javascript">
-									function moreInfo() {
-										alert("Subject ID: LSD"
-												+ "\nSubject Name: Đảng's history"
-												+ "\nNumber of credits: 2");
-									}
-								</script>
+
 
 							</form>
 						</div>

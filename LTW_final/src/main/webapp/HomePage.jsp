@@ -25,7 +25,7 @@
 
 								<div class="mt-4 pt-2">
 									<input class="btn btn-primary btn-lg" type="button"
-										value="Subjects" data-action="SubjectServlet" />
+										value="Subjects" onclick="location.href='/LTW_final/viewSubject'" />
 								</div>
 
 								<div class="mt-4 pt-2">
