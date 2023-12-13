@@ -1,3 +1,6 @@
+<%@page import="com.java.be.Subject"%>
+<%@page import="java.util.List"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -36,7 +39,7 @@
 							<div class="mt-4 pt-2">
 								<button type="button"
 									class="btn btn-primary btn-rounded btn-sm my-0"
-									onclick="location.href='SubjectRegister.jsp'">
+									onclick="location.href='SubjectRegistration.jsp'">
 									<i class="fa-solid fa-plus"></i>&nbsp;&nbsp;Add
 								</button>
 							</div>
@@ -57,8 +60,7 @@
 										<td><span class="table-remove edit">
 												<button type="button"
 													class="btn btn-primary btn-rounded btn-sm my-0"
-													onclick="moreInfo()">
-													More Info</button>
+													onclick="moreInfo()">More Info</button>
 										</span></td>
 										<td><span>
 												<button type="button"
@@ -71,8 +73,32 @@
 													Remove</button>
 										</span></td>
 									</tr>
+									
+									<c:forEach var="item" items="${ListSubjects}">
+										<tr>
+											<td>${item.getSubjectID()}</td>
+											<td>${item.getSubjectName()}</td>
+											<td>${item.getNoC()}</td>
+											<td><span class="table-remove edit">
+													<button type="button"
+														class="btn btn-primary btn-rounded btn-sm my-0"
+														onclick="moreInfo()">More Info</button>
+											</span></td>
+											<td><span>
+													<button type="button"
+														class="btn btn-primary btn-rounded btn-sm my-0">
+														Edit</button>
+											</span></td>
+											<td><span class="table-remove edit">
+													<button type="button"
+														class="btn btn-danger btn-rounded btn-sm my-0">
+														Remove</button>
+											</span></td>
+										</tr>
+
+									</c:forEach>
 								</table>
-								
+
 								<script type="text/javascript">
 									function moreInfo() {
 										alert("Subject ID: LSD"

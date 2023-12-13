@@ -21,11 +21,11 @@
 						style="border-radius: 15px;">
 						<div class="card-body p-4 p-md-5">
 							<h3 class="mb-4 pb-2 pb-md-0 mb-md-5 text-center">Home</h3>
-							<form class="d-flex justify-content-md-around">
+							<form class="d-flex justify-content-md-around" method="post">
 
 								<div class="mt-4 pt-2">
 									<input class="btn btn-primary btn-lg" type="button"
-										value="Subjects" onclick="location.href='Subjects.jsp'" />
+										value="Subjects" data-action="SubjectServlet" />
 								</div>
 
 								<div class="mt-4 pt-2">

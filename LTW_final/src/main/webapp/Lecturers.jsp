@@ -36,7 +36,7 @@
 							<div class="mt-4 pt-2">
 								<button type="button"
 									class="btn btn-primary btn-rounded btn-sm my-0"
-									onclick="location.href='LecturerRegister.jsp'">
+									onclick="location.href='LecturerRegistration.jsp'">
 									<i class="fa-solid fa-plus"></i>&nbsp;&nbsp;Add
 								</button>
 							</div>

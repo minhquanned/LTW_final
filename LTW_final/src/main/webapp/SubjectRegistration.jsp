@@ -16,6 +16,9 @@
 <link rel="stylesheet" type="text/css" href="CSS/index.css">
 <title>Subject Registration</title>
 </head>
+
+<script type="text/javascript"></script>
+
 <body>
 	<section class="vh-100 bg-secondary bg-gradient gradient-custom">
 		<div class="container py-5 h-100">
@@ -32,15 +35,15 @@
 								</button>
 								Subject Registration
 							</h3>
-							<form>
+							<form action="subjectRegister">
 
 								<div class="row">
 									<div class="col-md-6 mb-4">
 
 										<div class="form-outline">
 											<label class="form-label" for="lecturerID">Subject ID</label>
-											<input type="text" id="lecturerID"
-												class="form-control form-control-lg" />
+											<input type="text" id="subjectID" name="subjectID"
+												class="form-control form-control-lg" required />
 										</div>
 
 									</div>
@@ -49,8 +52,8 @@
 
 										<div class="form-outline">
 											<label class="form-label" for="subjectName">Subject
-												Name</label> <input type="text" id="subjectName"
-												class="form-control form-control-lg" />
+												Name</label> <input type="text" id="subjectName" name="subjectName"
+												class="form-control form-control-lg" required />
 										</div>
 
 									</div>
@@ -61,7 +64,8 @@
 										<div>
 
 											<label class="form-label select-label">Number of
-												credits</label><br> <select class="select form-control-lg">
+												credits</label><br> <select class="select form-control-lg"
+												id="noC" name="noC" required>
 												<option value="0" disabled selected>Choose option</option>
 												<option value="1">1</option>
 												<option value="2">2</option>

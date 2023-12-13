@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
   <display-name>LTW-final</display-name>
   <welcome-file-list>
     <welcome-file>HomePage.html</welcome-file>
@@ -10,11 +10,21 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   <error-page>
-        <error-code>404</error-code>
-        <location>/404.jsp</location>
+    <error-code>404</error-code>
+    <location>/404.jsp</location>
   </error-page>
   <error-page>
-        <error-code>405</error-code>
-        <location>/405.jsp</location>
+    <error-code>405</error-code>
+    <location>/405.jsp</location>
   </error-page>
+  <servlet>
+    <description></description>
+    <display-name>viewSubject</display-name>
+    <servlet-name>viewSubject</servlet-name>
+    <servlet-class>com.java.be.SubjectServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>viewServlet</servlet-name>
+    <url-pattern>/SubjectServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

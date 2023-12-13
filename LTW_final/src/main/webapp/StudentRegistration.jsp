@@ -32,14 +32,14 @@
 								</button>
 								Student Registration
 							</h3>
-							<form>
+							<form action="">
 
 								<div class="row">
 									<div class="col-md-6 mb-4">
 
 										<div class="form-outline">
 											<label class="form-label" for="studentID">Student ID</label>
-											<input type="text" id="studentID"
+											<input type="text" id="studentID" name="studentID"
 												class="form-control form-control-lg" />
 										</div>
 
@@ -48,7 +48,7 @@
 
 										<div class="form-outline">
 											<label class="form-label" for="class">Class</label> <input
-												type="text" id="class" class="form-control form-control-lg" />
+												type="text" id="class" name="class" class="form-control form-control-lg" />
 										</div>
 
 									</div>
@@ -59,7 +59,7 @@
 
 										<div class="form-outline">
 											<label class="form-label" for="firstName">First Name</label>
-											<input type="text" id="firstName"
+											<input type="text" id="firstName" name="fName"
 												class="form-control form-control-lg" />
 										</div>
 
@@ -68,7 +68,7 @@
 
 										<div class="form-outline">
 											<label class="form-label" for="lastName">Last Name</label> <input
-												type="text" id="lastName"
+												type="text" id="lastName" name="lName"
 												class="form-control form-control-lg" />
 										</div>
 
@@ -81,7 +81,7 @@
 										<div class="form-outline datepicker w-100">
 											<label for="birthdayDate" class="form-label">Birthday</label>
 											<input type="date" class="form-control form-control-lg"
-												id="birthdayDate" />
+												id="birthdayDate" name="birthday" />
 										</div>
 
 									</div>
