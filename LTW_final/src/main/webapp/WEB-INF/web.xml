@@ -19,12 +19,12 @@
   </error-page>
   <servlet>
     <description></description>
-    <display-name>viewSubject</display-name>
-    <servlet-name>viewSubject</servlet-name>
+    <display-name>SubjectServlet</display-name>
+    <servlet-name>SubjectServlet</servlet-name>
     <servlet-class>com.java.be.SubjectServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>viewServlet</servlet-name>
+    <servlet-name>SubjectServlet</servlet-name>
     <url-pattern>/SubjectServlet</url-pattern>
   </servlet-mapping>
 </web-app>
