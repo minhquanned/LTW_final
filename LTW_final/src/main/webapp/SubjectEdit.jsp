@@ -36,10 +36,18 @@
 								Edit Subject
 							</h3>
 							<form action="EditSubject" method="post">
-							
-								<h4 class="text-primary">Edit Subject: ${subject.getSubjectID()}</h4>
 
 								<div class="row">
+								
+									<div class="col-md-6 mb-4">
+
+										<div class="form-outline">
+											<label class="form-label" for="lecturerID">Subject ID</label>
+											<input type="text" id="subjectID" name="subjectID"
+												class="form-control form-control-lg" value="${subject.getSubjectID()}" required />
+										</div>
+
+									</div>
 
 									<div class="col-md-6 mb-4">
 										<div class="form-outline">
@@ -48,6 +56,10 @@
 												class="form-control form-control-lg" value="${subject.getSubjectName()}" required />
 										</div>
 									</div>
+									
+								</div>
+								
+								<div class="row">
 									
 									<div class="col-md-6 mb-4 pb-2">
 										<div>
@@ -68,8 +80,9 @@
 											</select>
 										</div>
 									</div>
-									
+								
 								</div>
+								
 								<div class="mt-4 pt-2">
 									<input class="btn btn-primary btn-lg" type="submit"
 										value="Submit" />

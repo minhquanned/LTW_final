@@ -30,11 +30,13 @@ public class EditSubject extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		SubjectDBContext subjectDBContext = new SubjectDBContext();
+		String subjectID = request.getParameter("subjectID");
 		if (request.getParameter("subjectID") != null && !request.getParameter("subjectID").isEmpty()) {
 			try {
 				Subject subject = subjectDBContext.getSubjectbyID(request.getParameter("subjectID"));
 				request.setAttribute("subject", subject);
 				request.getRequestDispatcher("SubjectEdit.jsp").forward(request, response);
+				System.out.println("This is from doGet");
 			} catch (ClassNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -42,7 +44,7 @@ public class EditSubject extends HttpServlet {
 		}
 
 		// Return SubjectServlet if there is no id transfer to
-//		response.sendRedirect("SubjectServlet");
+		response.sendRedirect("SubjectServlet");
 	}
 
 	/**
@@ -65,8 +67,7 @@ public class EditSubject extends HttpServlet {
 		} catch (Exception e) {
 			out.print(e.getMessage());
 		}
-		// Return SubjectServlet if there is no id transfer to
-//		response.sendRedirect("SubjectServler");
+		response.sendRedirect("viewSubject");
 	}
 
 }

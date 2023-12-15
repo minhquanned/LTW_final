@@ -29,7 +29,8 @@ public class SubjectDBContext {
 	// Test
 	public static void main(String[] args) throws ClassNotFoundException {
 		SubjectDBContext bConnect = new SubjectDBContext();
-		List<Subject> list = bConnect.getAllSubjects();
+		Subject bSubject = new Subject("CSDL", "dtb001", "3");
+		bConnect.updateSubject(bSubject);
 	}
 
 	// Take all Subject
@@ -90,6 +91,7 @@ public class SubjectDBContext {
 			pstm.setString(3, noC);
 
 			pstm.executeUpdate();
+			System.out.println("add success");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -102,11 +104,12 @@ public class SubjectDBContext {
 			c = dbConnect.initializeDatabase();
 			PreparedStatement pstm = c
 					.prepareStatement("UPDATE [SUBJECT] SET subjectName = ?, noC = ? WHERE subjectID = ?");
-			pstm.setString(1, subject.subjectName);
-			pstm.setString(2, subject.noC);
-			pstm.setString(3, subject.subjectID);
+			pstm.setString(1, subject.getSubjectName());
+			pstm.setString(2, subject.getNoC());
+			pstm.setString(3, subject.getSubjectID());
 			
 			pstm.executeUpdate();
+			System.out.println("update success!");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -124,7 +127,7 @@ public class SubjectDBContext {
 			pstm.setString(1, subjectID);
 			
 			pstm.executeUpdate();
-			System.out.println("update success!");
+			System.out.println("delete success!");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -34,7 +34,7 @@ public class subjectRegister extends HttpServlet {
 			pstm.setString(3, noC);
 			
 			pstm.executeUpdate();
-			System.out.println("success!");
+			System.out.println("Add success!");
 			
 			pstm.close();
             c.close();
