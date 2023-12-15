@@ -47,4 +47,14 @@
     <servlet-name>EditSubject</servlet-name>
     <url-pattern>/EditSubject</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddSubject</display-name>
+    <servlet-name>AddSubject</servlet-name>
+    <servlet-class>com.java.be.AddSubject</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddSubject</servlet-name>
+    <url-pattern>/AddSubject</url-pattern>
+  </servlet-mapping>
 </web-app>

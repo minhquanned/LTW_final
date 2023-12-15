@@ -35,7 +35,7 @@
 								</button>
 								Subject Registration
 							</h3>
-							<form action="subjectRegister">
+							<form action="AddSubject">
 
 								<div class="row">
 									<div class="col-md-6 mb-4">

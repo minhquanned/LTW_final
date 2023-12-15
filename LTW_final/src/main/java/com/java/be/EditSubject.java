@@ -36,7 +36,6 @@ public class EditSubject extends HttpServlet {
 				Subject subject = subjectDBContext.getSubjectbyID(request.getParameter("subjectID"));
 				request.setAttribute("subject", subject);
 				request.getRequestDispatcher("SubjectEdit.jsp").forward(request, response);
-				System.out.println("This is from doGet");
 			} catch (ClassNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
