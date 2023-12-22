@@ -9,15 +9,15 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * Servlet implementation class SubjectServlet
+ * Servlet implementation class LecturerServlet
  */
-public class SubjectServlet extends HttpServlet {
+public class LecturerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SubjectServlet() {
+    public LecturerServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,12 +27,13 @@ public class SubjectServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		SubjectDBContext subjectDBConetxt = new SubjectDBContext();
+		LecturerDBContext lecturerDBConetxt = new LecturerDBContext();
 		try {
-			List<Subject> list = subjectDBConetxt.getAllSubjects();
+			List<Lecturer> list = lecturerDBConetxt.getAllLecturers();
+			System.out.println(list);
 			
-			request.setAttribute("ListSubjects", list);
-			request.getRequestDispatcher("Subjects.jsp").forward(request, response);
+			request.setAttribute("ListLecturers", list);
+			request.getRequestDispatcher("Lecturers.jsp").forward(request, response);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

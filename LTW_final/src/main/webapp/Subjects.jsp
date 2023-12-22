@@ -1,5 +1,4 @@
 <%@page import="com.java.be.Subject"%>
-<%@page import="java.util.List"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -72,9 +71,9 @@
 														onclick="location.href='/LTW_final/EditSubject?subjectID=${item.getSubjectID()}'">
 														Edit</button>
 											</span></td>
-											<td><span class="table-remove edit">
+											<td><span>
 													<button type="button"
-														class="btn btn-danger btn-rounded btn-sm my-0"
+														class="btn btn-primary btn-rounded btn-sm my-0"
 														onclick="location.href='/LTW_final/DeleteSubject?subjectID=${item.getSubjectID()}'">
 														Remove</button>
 											</span></td>

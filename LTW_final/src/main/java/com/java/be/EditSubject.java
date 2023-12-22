@@ -66,7 +66,7 @@ public class EditSubject extends HttpServlet {
 		} catch (Exception e) {
 			out.print(e.getMessage());
 		}
-		response.sendRedirect("viewSubject");
+		response.sendRedirect("SubjectServlet");
 	}
 
 }

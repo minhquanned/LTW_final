@@ -6,18 +6,17 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
 /**
- * Servlet implementation class SubjectServlet
+ * Servlet implementation class AddLecturer
  */
-public class SubjectServlet extends HttpServlet {
+public class AddLecturer extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SubjectServlet() {
+    public AddLecturer() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,16 +26,22 @@ public class SubjectServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		SubjectDBContext subjectDBConetxt = new SubjectDBContext();
+		String lecturerID = request.getParameter("lecturerID");
+		String position = request.getParameter("position");
+		String firstName = request.getParameter("firstName");
+		String lastName = request.getParameter("lastName");
+		String birthday = request.getParameter("birthday");
+		String gender = request.getParameter("gender");
+		String email = request.getParameter("email");
+		String phoneNumber = request.getParameter("phoneNumber");
+		LecturerDBContext lecturerDBContext = new LecturerDBContext();
 		try {
-			List<Subject> list = subjectDBConetxt.getAllSubjects();
-			
-			request.setAttribute("ListSubjects", list);
-			request.getRequestDispatcher("Subjects.jsp").forward(request, response);
+			lecturerDBContext.addLecturer(lecturerID, position, firstName, lastName, birthday, gender, email, phoneNumber);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		response.sendRedirect("LecturerServlet");
 	}
 
 	/**

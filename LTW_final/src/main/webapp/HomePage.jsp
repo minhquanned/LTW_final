@@ -30,7 +30,7 @@
 
 								<div class="mt-4 pt-2">
 									<input class="btn btn-primary btn-lg" type="button"
-										value="Lecturers" onclick="location.href='Lecturers.jsp'" />
+										value="Lecturers" onclick="location.href='/LTW_final/LecturerServlet'" />
 								</div>
 
 								<div class="mt-4 pt-2">

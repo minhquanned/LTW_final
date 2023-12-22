@@ -38,7 +38,7 @@ public class SubjectDBContext {
 		List<Subject> subjects = new ArrayList<>();
 
 		try {
-			c = dbConnect.initializeDatabase();
+//			c = dbConnect.initializeDatabase();
 			Statement stm = c.createStatement();
 			ResultSet rs = stm.executeQuery("SELECT * FROM [SUBJECT]");
 
@@ -83,7 +83,7 @@ public class SubjectDBContext {
 	// Add Subject
 	public void addSubject(String subjectID, String subjectName, String noC) throws ClassNotFoundException {
 		try {
-			c = dbConnect.initializeDatabase();
+//			c = dbConnect.initializeDatabase();
 			PreparedStatement pstm = c
 					.prepareStatement("INSERT INTO [SUBJECT] (subjectID, subjectName, noC) values (?, ?, ?)");
 			pstm.setString(1, subjectID);
@@ -101,7 +101,7 @@ public class SubjectDBContext {
 	// Update Subject
 	public void updateSubject(Subject subject) {
 		try {
-			c = dbConnect.initializeDatabase();
+//			c = dbConnect.initializeDatabase();
 			PreparedStatement pstm = c
 					.prepareStatement("UPDATE [SUBJECT] SET subjectName = ?, noC = ? WHERE subjectID = ?");
 			pstm.setString(1, subject.getSubjectName());
@@ -110,9 +110,6 @@ public class SubjectDBContext {
 			
 			pstm.executeUpdate();
 			System.out.println("update success!");
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -122,15 +119,12 @@ public class SubjectDBContext {
 	// Delete Subject
 	public void deleteSubject(String subjectID) {
 		try {
-			c = dbConnect.initializeDatabase();
+//			c = dbConnect.initializeDatabase();
 			PreparedStatement pstm = c.prepareStatement("DELETE FROM [SUBJECT] WHERE subjectID = ?");
 			pstm.setString(1, subjectID);
 			
 			pstm.executeUpdate();
 			System.out.println("delete success!");
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

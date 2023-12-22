@@ -14,7 +14,7 @@
 	integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
 	crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" type="text/css" href="CSS/index.css">
-<title>Lecturer Registration</title>
+<title>Lecturer Edit</title>
 </head>
 <body>
 	<section class="bg-secondary bg-gradient gradient-custom">
@@ -30,7 +30,7 @@
 									onclick="history.back()">
 									<i class="fa-solid fa-chevron-left"></i>
 								</button>
-								Lecturer Registration
+								Lecturer Edit
 							</h3>
 							<form action="AddLecturer">
 
@@ -40,7 +40,7 @@
 										<div class="form-outline">
 											<label class="form-label" for="lecturerID">Lecturer
 												ID</label> <input type="text" id="lecturerID" name="lecturerID"
-												class="form-control form-control-lg" required />
+												class="form-control form-control-lg" value="${lecturer.getLecturerID()}" disabled required />
 										</div>
 
 									</div>
@@ -67,7 +67,7 @@
 										<div class="form-outline">
 											<label class="form-label" for="firstName">First Name</label>
 											<input type="text" id="firstName" name="firstName"
-												class="form-control form-control-lg" required />
+												class="form-control form-control-lg" value="${lecturer.getFirstName()}" required />
 										</div>
 
 									</div>
@@ -76,7 +76,7 @@
 										<div class="form-outline">
 											<label class="form-label" for="lastName">Last Name</label> <input
 												type="text" id="lastName" name="lastName"
-												class="form-control form-control-lg" required />
+												class="form-control form-control-lg" value="${lecturer.getLastName()}" required />
 										</div>
 
 									</div>
@@ -88,7 +88,7 @@
 										<div class="form-outline datepicker w-100">
 											<label for="birthday" class="form-label">Birthday</label> <input
 												type="date" name="birthday"
-												class="form-control form-control-lg" id="birthday" required />
+												class="form-control form-control-lg" id="birthday" value="${lecturer.getBirthday() }" required />
 										</div>
 
 									</div>
@@ -123,7 +123,7 @@
 										<div class="form-outline">
 											<label class="form-label" for="email">Email</label> <input
 												type="email" id="email" name="email"
-												class="form-control form-control-lg" required />
+												class="form-control form-control-lg" value="${lecturer.getEmail()}" required />
 										</div>
 
 									</div>
@@ -132,46 +132,12 @@
 										<div class="form-outline">
 											<label class="form-label" for="phoneNumber">Phone
 												Number</label> <input type="tel" id="phoneNumber" name="phoneNumber"
-												class="form-control form-control-lg" required />
+												class="form-control form-control-lg" value="${lecturer.getPhoneNumber()}" required />
 										</div>
 
 									</div>
 								</div>
-								<!--  
-								<div class="row">
-									<div class="col-md-6 mb-4 pb-2">
-										<div>
 
-											<label class="form-label select-label">Department of</label><br>
-											<select class="select form-control-lg">
-												<option value="0" disabled selected>Choose option</option>
-												<option value="1">Mathematics</option>
-												<option value="2">Physics</option>
-												<option value="3">Biology</option>
-												<option value="4">Geography</option>
-												<option value="5">Information Technology</option>
-												<option value="6">Fine Art</option>
-												<option value="7">Literature</option>
-												<option value="8">History</option>
-												<option value="9">Engineering</option>
-												<option value="10">Informatics</option>
-												<option value="11">Technology</option>
-												<option value="12">Politics</option>
-												<option value="13">Psychology</option>
-												<option value="14">Music</option>
-												<option value="15">Craft</option>
-												<option value="16">Astronomy</option>
-												<option value="17">Economics</option>
-												<option value="18">Social Science</option>
-												<option value="19">Foreign language</option>
-												<option value="20">Physical Education</option>
-											</select>
-
-										</div>
-
-									</div>
-								</div>
--->
 								<div class="mt-4 pt-2">
 									<input class="btn btn-primary btn-lg" type="submit"
 										value="Submit" />

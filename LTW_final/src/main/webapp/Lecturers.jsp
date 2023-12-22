@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,7 +28,7 @@
 							<h3 class="mb-4 pb-2 pb-md-0 mb-md-5 text-center">
 								<button type="button"
 									class="btn btn-danger btn-rounded btn-sm my-0"
-									onclick="history.back()">
+									onclick="location.href='/LTW_final'">
 									<i class="fa-solid fa-chevron-left"></i>
 								</button>
 								Lecturers List
@@ -49,43 +50,48 @@
 										<th>Lecturer ID</th>
 										<th>First Name</th>
 										<th>Last Name</th>
-										<th>Department</th>
+										<th>Phone Number</th>
+										<th class="text-center" colspan="3"> </th>
 									</tr>
-									<tr>
-										<td>MHT01</td>
-										<td>Thi</td>
-										<td>Mai Ha</td>
-										<td>Information Technology</td>
-										<td><span class="table-remove edit">
-												<button type="button"
-													class="btn btn-primary btn-rounded btn-sm my-0"
-													onclick="moreInfo()">
-													More Info</button>
-										</span></td>
-										<td><span>
-												<button type="button"
-													class="btn btn-primary btn-rounded btn-sm my-0">
-													Edit</button>
-										</span></td>
-										<td><span class="table-remove edit">
-												<button type="button"
-													class="btn btn-danger btn-rounded btn-sm my-0">
-													Remove</button>
-										</span></td>
-									</tr>
+									<c:forEach var="item" items="${ListLecturers}">
+
+										<tr>
+											<td>${item.getLecturerID()}</td>
+											<td>${item.getPosition()}</td>
+											<td>${item.getFirstName()}</td>
+											<td>${item.getLastName()}</td>
+											<td><span class="table-remove edit">
+													<button type="button"
+														class="btn btn-primary btn-rounded btn-sm my-0"
+														onclick="moreInfo('${item.getLecturerID()}','${item.getPosition()}','${item.getFirstName()}','${item.getLastName()}','${item.getBirthday()}','${item.getGender()}','${item.getEmail()}','${item.getPhoneNumber()}')">More Info</button>
+											</span></td>
+											<td><span>
+													<button type="button"
+														class="btn btn-primary btn-rounded btn-sm my-0"
+														onclick="location.href='/LTW_final/EditLecturer?lecturerID=${item.getLecturerID()}'">
+														Edit</button>
+											</span></td>
+											<td><span>
+													<button type="button"
+														class="btn btn-danger btn-rounded btn-sm my-0"
+														onclick="location.href='/LTW_final/DeleteLecturer?lecturerID=${item.getLecturerID()}'">
+														Remove</button>
+											</span></td>
+										</tr>
+
+									</c:forEach>
 								</table>
 								
 								<script type="text/javascript">
-									function moreInfo() {
-										alert("Lecture ID: MHT01"
-												+ "\nPosition: Main lecturer"
-												+ "\nFirst Name: Thi"
-												+ "\nLast Name: Mai Ha"
-												+ "\nBirthday: ..."
-												+ "\nGender: Female"
-												+ "\nEmail: ..."
-												+ "\nPhone Number: ..."
-												+ "\nDepartment of: Information Technology");
+									function moreInfo(lecturerID, position, firstName, lastName, birthday, gender, email, phoneNumber) {
+										alert("Lecture ID: " + lecturerID
+												+ "\nPosition: " + position
+												+ "\nFirst Name: " + firstName
+												+ "\nLast Name: " + lastName
+												+ "\nBirthday: " + birthday
+												+ "\nGender: " + gender
+												+ "\nEmail: " + email
+												+ "\nPhone Number: " + phoneNumber);
 									}
 								</script>
 

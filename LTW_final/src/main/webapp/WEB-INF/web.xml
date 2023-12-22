@@ -57,4 +57,34 @@
     <servlet-name>AddSubject</servlet-name>
     <url-pattern>/AddSubject</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddLecturer</display-name>
+    <servlet-name>AddLecturer</servlet-name>
+    <servlet-class>com.java.be.AddLecturer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddLecturer</servlet-name>
+    <url-pattern>/AddLecturer</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LecturerServlet</display-name>
+    <servlet-name>LecturerServlet</servlet-name>
+    <servlet-class>com.java.be.LecturerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LecturerServlet</servlet-name>
+    <url-pattern>/LecturerServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EditLecturer</display-name>
+    <servlet-name>EditLecturer</servlet-name>
+    <servlet-class>com.java.be.EditLecturer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditLecturer</servlet-name>
+    <url-pattern>/EditLecturer</url-pattern>
+  </servlet-mapping>
 </web-app>
