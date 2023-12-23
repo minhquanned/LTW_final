@@ -6,20 +6,24 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<!-- Font Awesome -->
 <link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-	crossorigin="anonymous">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-	integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-	crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" type="text/css" href="index.css">
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+	rel="stylesheet" />
+<!-- Google Fonts -->
+<link
+	href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+	rel="stylesheet" />
+<!-- MDB -->
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css"
+	rel="stylesheet" />
+<link rel="shortcut icon" type="x-icon" href="IMG/Logo.png">
+<link rel="stylesheet" type="text/css" href="CSS/index.css">
 <title>Subjects List</title>
 </head>
 <body>
-	<section class="vh-100 bg-secondary bg-gradient gradient-custom">
+	<section class="vh-100 gradient-custom">
 		<div class="container py-5 h-100">
 			<div class="row justify-content-center align-items-center h-100">
 				<div class="">
@@ -73,7 +77,7 @@
 											</span></td>
 											<td><span>
 													<button type="button"
-														class="btn btn-primary btn-rounded btn-sm my-0"
+														class="btn btn-danger btn-rounded btn-sm my-0"
 														onclick="location.href='/LTW_final/DeleteSubject?subjectID=${item.getSubjectID()}'">
 														Remove</button>
 											</span></td>
@@ -100,5 +104,8 @@
 			</div>
 		</div>
 	</section>
+	<!-- MDB -->
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"></script>
 </body>
 </html>

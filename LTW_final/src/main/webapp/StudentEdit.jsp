@@ -18,7 +18,7 @@
 	rel="stylesheet" />
 <link rel="shortcut icon" type="x-icon" href="IMG/Logo.png">
 <link rel="stylesheet" type="text/css" href="CSS/index.css">
-<title>Lecturer Edit</title>
+<title>Student Edit</title>
 </head>
 <body>
 	<section class="gradient-custom">
@@ -34,17 +34,17 @@
 									onclick="history.back()">
 									<i class="fa-solid fa-chevron-left"></i>
 								</button>
-								Lecturer Edit
+								Student Edit
 							</h3>
-							<form action="AddLecturer">
+							<form action="EditStudent">
 
 								<div class="row">
 									<div class="col-md-6 mb-4">
 
 										<div class="form-outline">
-											<label class="form-label" for="lecturerID">Lecturer
-												ID</label> <input type="text" id="lecturerID" name="lecturerID"
-												class="form-control form-control-lg" value="${lecturer.getLecturerID()}" disabled required />
+											<label class="form-label" for="studentID">Student
+												ID</label> <input type="text" id="studentID" name="studentID"
+												class="form-control form-control-lg" value="${student.getStudentID()}" disabled required />
 										</div>
 
 									</div>
@@ -52,14 +52,9 @@
 									<div class="col-md-6 mb-4">
 
 										<div class="form-outline">
-											<label class="form-label" for="position">Position</label><br>
-											<select class="select form-control-lg" name="position" required>
-												<option value="0" disabled selected>Choose option</option>
-												<option value="Tutors">Tutors</option>
-												<option value="Main lecturer">Main lecturer</option>
-												<option value="Associate Professor">Associate Professor</option>
-												<option value="Professor">Professor</option>
-											</select>
+											<label class="form-label" for="className">Class</label>
+											<input type="text" id="className" name="className"
+												class="form-control form-control-lg" value="${student.getClassName()}" required />
 										</div>
 
 									</div>
@@ -71,7 +66,7 @@
 										<div class="form-outline">
 											<label class="form-label" for="firstName">First Name</label>
 											<input type="text" id="firstName" name="firstName"
-												class="form-control form-control-lg" value="${lecturer.getFirstName()}" required />
+												class="form-control form-control-lg" value="${student.getFirstName()}" required />
 										</div>
 
 									</div>
@@ -80,7 +75,7 @@
 										<div class="form-outline">
 											<label class="form-label" for="lastName">Last Name</label> <input
 												type="text" id="lastName" name="lastName"
-												class="form-control form-control-lg" value="${lecturer.getLastName()}" required />
+												class="form-control form-control-lg" value="${student.getLastName()}" required />
 										</div>
 
 									</div>
@@ -92,7 +87,7 @@
 										<div class="form-outline datepicker w-100">
 											<label for="birthday" class="form-label">Birthday</label> <input
 												type="date" name="birthday"
-												class="form-control form-control-lg" id="birthday" value="${lecturer.getBirthday() }" required />
+												class="form-control form-control-lg" id="birthday" value="${student.getBirthday() }" required />
 										</div>
 
 									</div>
@@ -127,7 +122,7 @@
 										<div class="form-outline">
 											<label class="form-label" for="email">Email</label> <input
 												type="email" id="email" name="email"
-												class="form-control form-control-lg" value="${lecturer.getEmail()}" required />
+												class="form-control form-control-lg" value="${student.getEmail()}" required />
 										</div>
 
 									</div>
@@ -136,7 +131,7 @@
 										<div class="form-outline">
 											<label class="form-label" for="phoneNumber">Phone
 												Number</label> <input type="tel" id="phoneNumber" name="phoneNumber"
-												class="form-control form-control-lg" value="${lecturer.getPhoneNumber()}" required />
+												class="form-control form-control-lg" value="${student.getPhoneNumber()}" required />
 										</div>
 
 									</div>

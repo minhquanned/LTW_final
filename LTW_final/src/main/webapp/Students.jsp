@@ -1,23 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<!-- Font Awesome -->
 <link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-	crossorigin="anonymous">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-	integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-	crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" type="text/css" href="index.css">
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+	rel="stylesheet" />
+<!-- Google Fonts -->
+<link
+	href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+	rel="stylesheet" />
+<!-- MDB -->
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css"
+	rel="stylesheet" />
+<link rel="shortcut icon" type="x-icon" href="IMG/Logo.png">
+<link rel="stylesheet" type="text/css" href="CSS/index.css">
 <title>Students List</title>
 </head>
 <body>
-	<section class="vh-100 bg-secondary bg-gradient gradient-custom">
+	<section class="vh-100 gradient-custom">
 		<div class="container py-5 h-100">
 			<div class="row justify-content-center align-items-center h-100">
 				<div class="">
@@ -27,7 +32,7 @@
 							<h3 class="mb-4 pb-2 pb-md-0 mb-md-5 text-center">
 								<button type="button"
 									class="btn btn-danger btn-rounded btn-sm my-0"
-									onclick="history.back()">
+									onclick="location.href='/LTW_final'">
 									<i class="fa-solid fa-chevron-left"></i>
 								</button>
 								Students List
@@ -47,47 +52,50 @@
 								<table class="table ccard-table table-striped table-hover">
 									<tr>
 										<th>Student ID</th>
+										<th>Class</th>
 										<th>First Name</th>
 										<th>Last Name</th>
-										<th>Class</th>
-										<th>Department</th>
+										<th class="text-center" colspan="3"> </th>
 									</tr>
-									<tr>
-										<td>3120421016</td>
-										<td>Quan</td>
-										<td>Ha Minh</td>
-										<td>21CNTTC</td>
-										<td>Information Technology</td>
-										<td><span class="table-remove edit">
-												<button type="button"
-													class="btn btn-primary btn-rounded btn-sm my-0"
-													onclick="moreInfo()">
-													More Info</button>
-										</span></td>
-										<td><span>
-												<button type="button"
-													class="btn btn-primary btn-rounded btn-sm my-0">
-													Edit</button>
-										</span></td>
-										<td><span class="table-remove edit">
-												<button type="button"
-													class="btn btn-danger btn-rounded btn-sm my-0">
-													Remove</button>
-										</span></td>
-									</tr>
+									<c:forEach var="item" items="${ListStudents}">
+
+										<tr>
+											<td>${item.getStudentID()}</td>
+											<td>${item.getClassName()}</td>
+											<td>${item.getFirstName()}</td>
+											<td>${item.getLastName()}</td>
+											<td><span class="table-remove edit">
+													<button type="button"
+														class="btn btn-primary btn-rounded btn-sm my-0"
+														onclick="moreInfo('${item.getStudentID()}','${item.getClassName()}','${item.getFirstName()}','${item.getLastName()}','${item.getBirthday()}','${item.getGender()}','${item.getEmail()}','${item.getPhoneNumber()}')">More Info</button>
+											</span></td>
+											<td><span>
+													<button type="button"
+														class="btn btn-primary btn-rounded btn-sm my-0"
+														onclick="location.href='/LTW_final/EditStudent?studentID=${item.getStudentID()}'">
+														Edit</button>
+											</span></td>
+											<td><span>
+													<button type="button"
+														class="btn btn-danger btn-rounded btn-sm my-0"
+														onclick="location.href='/LTW_final/DeleteStudent?studentID=${item.getStudentID()}'">
+														Remove</button>
+											</span></td>
+										</tr>
+
+									</c:forEach>
 								</table>
 								
 								<script type="text/javascript">
-									function moreInfo() {
-										alert("Student ID: 3120421016"
-												+ "\nFirst Name: Quan"
-												+ "\nLast Name: Ha Minh"
-												+ "\nClass: 21CNTTC"
-												+ "\nBirthday: 20-05-2003"
-												+ "\nGender: Male"
-												+ "\nEmail: minhquan4so9@gmail.com"
-												+ "\nPhone Number: 0967276961"
-												+ "\nDepartment of: Information Technology");
+									function moreInfo(studentID, className, firstName, lastName, birthday, gender, email, phoneNumber) {
+										alert("Lecture ID: " + studentID
+												+ "\nClass: " + className
+												+ "\nFirst Name: " + firstName
+												+ "\nLast Name: " + lastName
+												+ "\nBirthday: " + birthday
+												+ "\nGender: " + gender
+												+ "\nEmail: " + email
+												+ "\nPhone Number: " + phoneNumber);
 									}
 								</script>
 
@@ -98,5 +106,8 @@
 			</div>
 		</div>
 	</section>
+	<!-- MDB -->
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"></script>
 </body>
 </html>

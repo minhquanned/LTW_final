@@ -8,11 +8,11 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LecturerDBContext {
+public class StudentDBContext {
 	Connection c;
 
 	// Test connection
-	public LecturerDBContext() {
+	public StudentDBContext() {
 		try {
 			c = dbConnect.initializeDatabase();
 		} catch (ClassNotFoundException e) {
@@ -26,23 +26,23 @@ public class LecturerDBContext {
 
 	// Test
 	public static void main(String[] args) throws ClassNotFoundException {
-		LecturerDBContext bConnect = new LecturerDBContext();
-//		Lecturer bLecturer = new Lecturer("CSDL", "dtb001", "3");
-//		bConnect.updateLecturer(bLecturer);
+		StudentDBContext bConnect = new StudentDBContext();
+//		Student bStudent = new Student("CSDL", "dtb001", "3");
+//		bConnect.updateStudent(bStudent);
 	}
 
-	// Take all Lecturer
-	public List<Lecturer> getAllLecturers() throws ClassNotFoundException {
-		List<Lecturer> lecturers = new ArrayList<>();
+	// Take all Student
+	public List<Student> getAllStudents() throws ClassNotFoundException {
+		List<Student> students = new ArrayList<>();
 
 		try {
 //			c = dbConnect.initializeDatabase();
 			Statement stm = c.createStatement();
-			ResultSet rs = stm.executeQuery("SELECT * FROM [LECTURER]");
+			ResultSet rs = stm.executeQuery("SELECT * FROM [STUDENT]");
 
 			while (rs.next()) {
-				String lecturerID = rs.getString("lecturerID");
-				String position = rs.getString("position");
+				String studentID = rs.getString("studentID");
+				String className = rs.getString("className");
 				String firstName = rs.getString("firstName");
 				String lastName = rs.getString("lastName");
 				String birthday = rs.getString("birthday");
@@ -50,27 +50,27 @@ public class LecturerDBContext {
 				String email = rs.getString("email");
 				String phoneNumber = rs.getString("phoneNumber");
 
-				Lecturer lecturer = new Lecturer(lecturerID, position, firstName, lastName, birthday, gender, email, phoneNumber);
+				Student student = new Student(studentID, className, firstName, lastName, birthday, gender, email, phoneNumber);
 
-				lecturers.add(lecturer);
+				students.add(student);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-		return lecturers;
+		return students;
 	}
 	
-	public Lecturer getLecturerbyID(String id) throws ClassNotFoundException {
+	public Student getStudentbyID(String id) throws ClassNotFoundException {
 		try {
 			c = dbConnect.initializeDatabase();
 			Statement stm = c.createStatement();
-			ResultSet rs = stm.executeQuery("SELECT * FROM [LECTURER] WHERE lecturerID = '" + id + "'");
+			ResultSet rs = stm.executeQuery("SELECT * FROM [STUDENT] WHERE studentID = '" + id + "'");
 
 			while (rs.next()) {
-				String lecturerID = rs.getString("lecturerID");
-				String position = rs.getString("position");
+				String studentID = rs.getString("studentID");
+				String className = rs.getString("className");
 				String firstName = rs.getString("firstName");
 				String lastName = rs.getString("lastName");
 				String birthday = rs.getString("birthday");
@@ -78,7 +78,7 @@ public class LecturerDBContext {
 				String email = rs.getString("email");
 				String phoneNumber = rs.getString("phoneNumber");
 
-				return new Lecturer(lecturerID, position, firstName, lastName, birthday, gender, email, phoneNumber);
+				return new Student(studentID, className, firstName, lastName, birthday, gender, email, phoneNumber);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -88,14 +88,14 @@ public class LecturerDBContext {
 		return null;
 	}
 
-	// Add Lecturer
-	public void addLecturer(String lecturerID, String position, String firstName, String lastName, String birthday, String gender, String email, String phoneNumber) throws ClassNotFoundException {
+	// Add Student
+	public void addStudent(String studentID, String className, String firstName, String lastName, String birthday, String gender, String email, String phoneNumber) throws ClassNotFoundException {
 		try {
 //			c = dbConnect.initializeDatabase();
 			PreparedStatement pstm = c
-					.prepareStatement("INSERT INTO [LECTURER] (lecturerID, position, firstName, lastName, birthday, gender, email, phoneNumber) values (?, ?, ?, ?, ?, ?, ?, ?)");
-			pstm.setString(1, lecturerID);
-			pstm.setString(2, position);
+					.prepareStatement("INSERT INTO [STUDENT] (studentID, className, firstName, lastName, birthday, gender, email, phoneNumber) values (?, ?, ?, ?, ?, ?, ?, ?)");
+			pstm.setString(1, studentID);
+			pstm.setString(2, className);
 			pstm.setString(3, firstName);
 			pstm.setString(4, lastName);
 			pstm.setString(5, birthday);
@@ -111,20 +111,20 @@ public class LecturerDBContext {
 		}
 	}
 
-	// Update Lecturer
-	public void updateLecturer(Lecturer lecturer) {
+	// Update Student
+	public void updateStudent(Student student) {
 		try {
 //			c = dbConnect.initializeDatabase();
 			PreparedStatement pstm = c
-					.prepareStatement("UPDATE [LETURER] SET position = ?, firstName = ?, lastName = ?, birthday = ?, gender = ?, email = ?, phoneNumber = ? WHERE lecturerID = ?");
-			pstm.setString(1, lecturer.getPosition());
-			pstm.setString(2, lecturer.getFirstName());
-			pstm.setString(3, lecturer.getLastName());
-			pstm.setString(4, lecturer.getBirthday());
-			pstm.setString(5, lecturer.getGender());
-			pstm.setString(6, lecturer.getEmail());
-			pstm.setString(7, lecturer.getPhoneNumber());
-			pstm.setString(8, lecturer.getLecturerID());
+					.prepareStatement("UPDATE [STUDENT] SET className = ?, firstName = ?, lastName = ?, birthday = ?, gender = ?, email = ?, phoneNumber = ? WHERE studentID = ?");
+			pstm.setString(1, student.getClassName());
+			pstm.setString(2, student.getFirstName());
+			pstm.setString(3, student.getLastName());
+			pstm.setString(4, student.getBirthday());
+			pstm.setString(5, student.getGender());
+			pstm.setString(6, student.getEmail());
+			pstm.setString(7, student.getPhoneNumber());
+			pstm.setString(8, student.getStudentID());
 			
 			pstm.executeUpdate();
 			System.out.println("update success!");
@@ -134,12 +134,12 @@ public class LecturerDBContext {
 		}
 	}
 	
-	// Delete Lecturer
-	public void deleteLecturer(String lecturerID) {
+	// Delete Student
+	public void deleteStudent(String studentID) {
 		try {
 //			c = dbConnect.initializeDatabase();
-			PreparedStatement pstm = c.prepareStatement("DELETE FROM [LECTURER] WHERE lecturerID = ?");
-			pstm.setString(1, lecturerID);
+			PreparedStatement pstm = c.prepareStatement("DELETE FROM [STUDENT] WHERE studentID = ?");
+			pstm.setString(1, studentID);
 			
 			pstm.executeUpdate();
 			System.out.println("delete success!");

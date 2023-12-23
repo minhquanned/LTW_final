@@ -29,7 +29,7 @@ public class SubjectDBContext {
 	// Test
 	public static void main(String[] args) throws ClassNotFoundException {
 		SubjectDBContext bConnect = new SubjectDBContext();
-		Subject bSubject = new Subject("CSDL", "dtb001", "3");
+		Subject bSubject = new Subject("CSDL", "Database", "5");
 		bConnect.updateSubject(bSubject);
 	}
 
@@ -107,6 +107,7 @@ public class SubjectDBContext {
 			pstm.setString(1, subject.getSubjectName());
 			pstm.setString(2, subject.getNoC());
 			pstm.setString(3, subject.getSubjectID());
+			System.out.println(subject.toString());
 			
 			pstm.executeUpdate();
 			System.out.println("update success!");

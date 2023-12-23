@@ -43,7 +43,7 @@ public class EditSubject extends HttpServlet {
 		}
 
 		// Return SubjectServlet if there is no id transfer to
-		response.sendRedirect("SubjectServlet");
+//		response.sendRedirect("SubjectServlet");
 	}
 
 	/**
@@ -62,7 +62,7 @@ public class EditSubject extends HttpServlet {
 			SubjectDBContext subjectDBContext = new SubjectDBContext();
 			Subject subject = new Subject(subjectID, subjectName, noC);
 			subjectDBContext.updateSubject(subject);
-//	            out.print(student.toString());
+//			out.print(subject.toString());
 		} catch (Exception e) {
 			out.print(e.getMessage());
 		}

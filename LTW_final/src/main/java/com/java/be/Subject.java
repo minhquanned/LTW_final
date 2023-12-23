@@ -31,4 +31,8 @@ public class Subject {
 	public void setNoC(String noC) {
 		this.noC = noC;
 	}
+	@Override
+	public String toString() {
+		return "Subject [subjectID=" + subjectID + ", subjectName=" + subjectName + ", noC=" + noC + "]";
+	}
 }
