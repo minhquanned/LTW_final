@@ -9,15 +9,15 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * Servlet implementation class SubjectServlet
+ * Servlet implementation class RSPServlet
  */
-public class SubjectServlet extends HttpServlet {
+public class RSPServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SubjectServlet() {
+    public RSPServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,13 +27,21 @@ public class SubjectServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-//		var currentYear = (new Date()).getYear();
-		SubjectDBContext subjectDBConetxt = new SubjectDBContext();
+		RSPDBContext rspDBContext = new RSPDBContext();
+		SPDBContext spDBConetxt = new SPDBContext();
+		StudentDBContext studentDBContext = new StudentDBContext(); 
+		LecturerDBContext lecturerDBContext = new LecturerDBContext();
 		try {
-			List<Subject> list = subjectDBConetxt.getAllSubjects();
+			List<RSP> rspList = rspDBContext.getAllRSPs();
+			List<SP> spList = spDBConetxt.getAllSPs();
+			List<Student> studentList = studentDBContext.getAllStudents();
+			List<Lecturer> Lecturerist = lecturerDBContext.getAllLecturers();
 			
-			request.setAttribute("ListSubjects", list);
-			request.getRequestDispatcher("Subjects.jsp").forward(request, response);
+			request.setAttribute("rspList", rspList);
+			request.setAttribute("spList", spList);
+			request.setAttribute("studentList", studentList);
+			request.setAttribute("Lecturerist", Lecturerist);
+			request.getRequestDispatcher("RSPs.jsp").forward(request, response);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

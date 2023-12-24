@@ -9,15 +9,15 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * Servlet implementation class SubjectServlet
+ * Servlet implementation class AddSP
  */
-public class SubjectServlet extends HttpServlet {
+public class AddSP extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SubjectServlet() {
+    public AddSP() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,13 +27,12 @@ public class SubjectServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-//		var currentYear = (new Date()).getYear();
 		SubjectDBContext subjectDBConetxt = new SubjectDBContext();
 		try {
 			List<Subject> list = subjectDBConetxt.getAllSubjects();
 			
 			request.setAttribute("ListSubjects", list);
-			request.getRequestDispatcher("Subjects.jsp").forward(request, response);
+			request.getRequestDispatcher("SPRegistration.jsp").forward(request, response);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -45,7 +44,19 @@ public class SubjectServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		String spID = request.getParameter("spID");
+		String spName = request.getParameter("spName");
+		int schoolYear = Integer.parseInt(request.getParameter("schoolYear"));
+		int spPart = Integer.parseInt(request.getParameter("spPart"));
+		String subjectID = request.getParameter("subjectID");
+		SPDBContext spDBContext = new SPDBContext();
+		try {
+			spDBContext.addSP(spID, spName, schoolYear, spPart, subjectID);
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		response.sendRedirect("SPServlet");
 	}
 
 }

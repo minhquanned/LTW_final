@@ -46,9 +46,9 @@
 									<div class="col-md-6 mb-4">
 
 										<div class="form-outline">
-											<label class="form-label" for="lecturerID">Subject ID</label>
+											<label class="form-label" for="subjectID">Subject ID</label>
 											<input type="text" id="subjectID" name="subjectID"
-												class="form-control form-control-lg" value="${subject.getSubjectID()}" disabled required />
+												class="form-control form-control-lg" value="${subject.getSubjectID()}" required />
 										</div>
 
 									</div>

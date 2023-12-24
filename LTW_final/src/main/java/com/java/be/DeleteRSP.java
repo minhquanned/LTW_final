@@ -6,18 +6,17 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
 /**
- * Servlet implementation class SubjectServlet
+ * Servlet implementation class DeleteRSP
  */
-public class SubjectServlet extends HttpServlet {
+public class DeleteRSP extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SubjectServlet() {
+    public DeleteRSP() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,17 +26,12 @@ public class SubjectServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-//		var currentYear = (new Date()).getYear();
-		SubjectDBContext subjectDBConetxt = new SubjectDBContext();
-		try {
-			List<Subject> list = subjectDBConetxt.getAllSubjects();
-			
-			request.setAttribute("ListSubjects", list);
-			request.getRequestDispatcher("Subjects.jsp").forward(request, response);
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		String rspID = request.getParameter("rspID");
+		if (rspID != null && !rspID.isEmpty() ) {
+			RSPDBContext rspDBContext = new RSPDBContext();
+			rspDBContext.deleteRSP(rspID);
 		}
+		response.sendRedirect("SPServlet");
 	}
 
 	/**

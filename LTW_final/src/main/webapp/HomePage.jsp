@@ -28,31 +28,51 @@
 					<div class="card shadow-2-strong card-registration"
 						style="border-radius: 15px;">
 						<div class="card-body p-4 p-md-5">
-							<span class="d-flex justify-content-center mb-5" > <img alt=""
-								src="IMG/Logo.png" width="300" height="auto">
+							<span class="d-flex justify-content-center mb-5"> <img
+								alt="" src="IMG/Logo.png" width="300" height="auto">
 							</span>
 							<h3 class="mb-4 pb-2 pb-md-0 mb-md-5 text-center">Home</h3>
 							<form class="d-flex justify-content-md-around" method="post">
 
 								<div class="mt-4 pt-2">
-									<input class="btn btn-primary btn-rounded btn-sm my-0" style="font-size: 20px" type="button"
+									<input class="btn btn-primary btn-rounded btn-sm my-0"
+										style="font-size: 20px; min-width: 140px;" type="button"
 										value="Subjects"
 										onclick="location.href='/LTW_final/SubjectServlet'" />
 								</div>
 
 								<div class="mt-4 pt-2">
-									<input class="btn btn-primary btn-rounded btn-sm my-0" style="font-size: 20px" type="button"
+									<input class="btn btn-primary btn-rounded btn-sm my-0"
+										style="font-size: 20px; min-width: 140px;" type="button"
 										value="Lecturers"
 										onclick="location.href='/LTW_final/LecturerServlet'" />
 								</div>
 
 								<div class="mt-4 pt-2">
-									<input class="btn btn-primary btn-rounded btn-sm my-0" style="font-size: 20px" type="button"
+									<input class="btn btn-primary btn-rounded btn-sm my-0"
+										style="font-size: 20px; min-width: 140px;" type="button"
 										value="Students"
 										onclick="location.href='/LTW_final/StudentServlet'" />
 								</div>
 
+								<div class="mt-4 pt-2">
+									<input class="btn btn-primary btn-rounded btn-sm my-0"
+										style="font-size: 20px; min-width: 140px;" type="button"
+										value="SP List" onclick="location.href='/LTW_final/SPServlet'" />
+								</div>
+
 							</form>
+
+							<div class="d-flex justify-content-md-around">
+
+								<div class="mt-4 pt-2">
+									<input class="btn btn-success btn-rounded btn-sm my-0"
+										style="font-size: 20px; min-width: 140px;" type="button"
+										value="SP Register"
+										onclick="location.href='/LTW_final/RSPServlet'" />
+								</div>
+
+							</div>
 						</div>
 					</div>
 				</div>

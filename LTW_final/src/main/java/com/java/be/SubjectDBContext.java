@@ -107,9 +107,9 @@ public class SubjectDBContext {
 			pstm.setString(1, subject.getSubjectName());
 			pstm.setString(2, subject.getNoC());
 			pstm.setString(3, subject.getSubjectID());
-			System.out.println(subject.toString());
 			
 			pstm.executeUpdate();
+			System.out.println(subject.toString());
 			System.out.println("update success!");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

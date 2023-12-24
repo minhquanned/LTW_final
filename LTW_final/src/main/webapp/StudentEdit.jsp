@@ -44,7 +44,7 @@
 										<div class="form-outline">
 											<label class="form-label" for="studentID">Student
 												ID</label> <input type="text" id="studentID" name="studentID"
-												class="form-control form-control-lg" value="${student.getStudentID()}" disabled required />
+												class="form-control form-control-lg" value="${student.getStudentID()}" required />
 										</div>
 
 									</div>

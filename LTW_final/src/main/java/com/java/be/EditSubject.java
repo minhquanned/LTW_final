@@ -30,7 +30,6 @@ public class EditSubject extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		SubjectDBContext subjectDBContext = new SubjectDBContext();
-		String subjectID = request.getParameter("subjectID");
 		if (request.getParameter("subjectID") != null && !request.getParameter("subjectID").isEmpty()) {
 			try {
 				Subject subject = subjectDBContext.getSubjectbyID(request.getParameter("subjectID"));
@@ -62,7 +61,7 @@ public class EditSubject extends HttpServlet {
 			SubjectDBContext subjectDBContext = new SubjectDBContext();
 			Subject subject = new Subject(subjectID, subjectName, noC);
 			subjectDBContext.updateSubject(subject);
-//			out.print(subject.toString());
+			out.print(subject.toString());
 		} catch (Exception e) {
 			out.print(e.getMessage());
 		}
