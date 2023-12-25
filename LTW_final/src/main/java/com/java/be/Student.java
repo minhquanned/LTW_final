@@ -72,4 +72,10 @@ public class Student {
 	public Student() {
 		super();
 	}
+	@Override
+	public String toString() {
+		return "Student [studentID=" + studentID + ", className=" + className + ", firstName=" + firstName
+				+ ", lastName=" + lastName + ", birthday=" + birthday + ", gender=" + gender + ", email=" + email
+				+ ", phoneNumber=" + phoneNumber + "]";
+	}
 }

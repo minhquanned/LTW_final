@@ -5,6 +5,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -13,30 +15,38 @@ import java.io.PrintWriter;
  */
 public class EditLecturer extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public EditLecturer() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public EditLecturer() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		LecturerDBContext lecturerDBContext = new LecturerDBContext();
-		String lecturerID = request.getParameter("lecturerID");
-		if (request.getParameter("lecturerID") != null && !request.getParameter("lecturerID").isEmpty()) {
-			try {
-				Lecturer lecturer = lecturerDBContext.getLecturerbyID(request.getParameter("lecturerID"));
-				request.setAttribute("lecturer", lecturer);
-				request.getRequestDispatcher("LecturerEdit.jsp").forward(request, response);
-			} catch (ClassNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+		HttpSession session = request.getSession();
+		User user = (User) session.getAttribute("userSession");
+		if (user == null) {
+			response.sendRedirect("LoginPage.jsp");
+		} else {
+			LecturerDBContext lecturerDBContext = new LecturerDBContext();
+			String lecturerID = request.getParameter("lecturerID");
+			if (request.getParameter("lecturerID") != null && !request.getParameter("lecturerID").isEmpty()) {
+				try {
+					Lecturer lecturer = lecturerDBContext.getLecturerbyID(request.getParameter("lecturerID"));
+					request.setAttribute("lecturer", lecturer);
+					request.getRequestDispatcher("LecturerEdit.jsp").forward(request, response);
+				} catch (ClassNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		}
 
@@ -45,9 +55,11 @@ public class EditLecturer extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		PrintWriter out = response.getWriter();
 		try {
@@ -61,7 +73,8 @@ public class EditLecturer extends HttpServlet {
 			String phoneNumber = request.getParameter("phoneNumber");
 
 			LecturerDBContext lecturerDBContext = new LecturerDBContext();
-			Lecturer lecturer = new Lecturer(lecturerID, position, firstName, lastName, birthday, gender, email, phoneNumber);
+			Lecturer lecturer = new Lecturer(lecturerID, position, firstName, lastName, birthday, gender, email,
+					phoneNumber);
 			lecturerDBContext.updateLecturer(lecturer);
 //	            out.print(student.toString());
 		} catch (Exception e) {

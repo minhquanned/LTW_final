@@ -121,7 +121,7 @@
 
 										<div class="form-outline">
 											<label class="form-label" for="email">Email</label> <input
-												type="email" id="email"
+												type="email" id="email" name="email"
 												class="form-control form-control-lg" required />
 										</div>
 

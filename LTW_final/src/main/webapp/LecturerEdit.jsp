@@ -44,7 +44,9 @@
 										<div class="form-outline">
 											<label class="form-label" for="lecturerID">Lecturer
 												ID</label> <input type="text" id="lecturerID" name="lecturerID"
-												class="form-control form-control-lg" value="${lecturer.getLecturerID()}" required />
+												class="form-control form-control-lg"
+												value="${lecturer.getLecturerID()}" required />
+											<p class="text-danger">Do not change this field</p>
 										</div>
 
 									</div>
@@ -53,13 +55,16 @@
 
 										<div class="form-outline">
 											<label class="form-label" for="position">Position</label><br>
-											<select class="select form-control-lg" name="position" required>
+											<select class="select form-control-lg" name="position"
+												required>
 												<option value="0" disabled selected>Choose option</option>
 												<option value="Tutors">Tutors</option>
 												<option value="Main lecturer">Main lecturer</option>
-												<option value="Associate Professor">Associate Professor</option>
+												<option value="Associate Professor">Associate
+													Professor</option>
 												<option value="Professor">Professor</option>
 											</select>
+											<p class="text-primary">Last choice: ${lecturer.getPosition()}</p>
 										</div>
 
 									</div>
@@ -71,7 +76,8 @@
 										<div class="form-outline">
 											<label class="form-label" for="firstName">First Name</label>
 											<input type="text" id="firstName" name="firstName"
-												class="form-control form-control-lg" value="${lecturer.getFirstName()}" required />
+												class="form-control form-control-lg"
+												value="${lecturer.getFirstName()}" required />
 										</div>
 
 									</div>
@@ -80,7 +86,8 @@
 										<div class="form-outline">
 											<label class="form-label" for="lastName">Last Name</label> <input
 												type="text" id="lastName" name="lastName"
-												class="form-control form-control-lg" value="${lecturer.getLastName()}" required />
+												class="form-control form-control-lg"
+												value="${lecturer.getLastName()}" required />
 										</div>
 
 									</div>
@@ -92,7 +99,8 @@
 										<div class="form-outline datepicker w-100">
 											<label for="birthday" class="form-label">Birthday</label> <input
 												type="date" name="birthday"
-												class="form-control form-control-lg" id="birthday" value="${lecturer.getBirthday() }" required />
+												class="form-control form-control-lg" id="birthday"
+												value="${lecturer.getBirthday() }" required />
 										</div>
 
 									</div>
@@ -102,20 +110,20 @@
 
 										<div class="form-check form-check-inline">
 											<input class="form-check-input" type="radio" name="gender"
-												id="female" value="female" checked /> <label
-												class="form-check-label" for="female">Female</label>
+												id="female" value="female" ${lecturer.getGender() == "female" ? "checked" : ""} /> <label
+												class="form-check-label" for="female" >Female</label>
 										</div>
 
 										<div class="form-check form-check-inline">
 											<input class="form-check-input" type="radio" name="gender"
-												id="male" value="male" /> <label class="form-check-label"
-												for="male">Male</label>
+												id="male" value="male" ${lecturer.getGender() == "male" ? "checked" : ""} /> <label class="form-check-label"
+												for="male" >Male</label>
 										</div>
 
 										<div class="form-check form-check-inline">
 											<input class="form-check-input" type="radio" name="gender"
-												id="orther" value="orther" /> <label
-												class="form-check-label" for="orther">Other</label>
+												id="other" value="other" ${lecturer.getGender() == "other" ? "checked" : ""} /> <label
+												class="form-check-label" for="orther" >Other</label>
 										</div>
 
 									</div>
@@ -127,7 +135,8 @@
 										<div class="form-outline">
 											<label class="form-label" for="email">Email</label> <input
 												type="email" id="email" name="email"
-												class="form-control form-control-lg" value="${lecturer.getEmail()}" required />
+												class="form-control form-control-lg"
+												value="${lecturer.getEmail()}" required />
 										</div>
 
 									</div>
@@ -136,15 +145,16 @@
 										<div class="form-outline">
 											<label class="form-label" for="phoneNumber">Phone
 												Number</label> <input type="tel" id="phoneNumber" name="phoneNumber"
-												class="form-control form-control-lg" value="${lecturer.getPhoneNumber()}" required />
+												class="form-control form-control-lg"
+												value="${lecturer.getPhoneNumber()}" required />
 										</div>
 
 									</div>
 								</div>
 
 								<div class="mt-4 pt-2">
-									<input class="btn btn-primary btn-rounded btn-sm my-0" type="submit"
-										value="Submit" />
+									<input class="btn btn-primary btn-rounded btn-sm my-0"
+										type="submit" value="Submit" />
 								</div>
 
 							</form>

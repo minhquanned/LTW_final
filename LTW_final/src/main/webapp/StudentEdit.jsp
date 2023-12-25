@@ -21,7 +21,7 @@
 <title>Student Edit</title>
 </head>
 <body>
-	<section class="gradient-custom">
+	<section class="vh-100 gradient-custom">
 		<div class="container py-5 h-100">
 			<div class="row justify-content-center align-items-center h-100">
 				<div class="col-12 col-lg-9 col-xl-7">
@@ -36,15 +36,17 @@
 								</button>
 								Student Edit
 							</h3>
-							<form action="EditStudent">
+							<form action="EditStudent" method="post">
 
 								<div class="row">
 									<div class="col-md-6 mb-4">
 
 										<div class="form-outline">
-											<label class="form-label" for="studentID">Student
-												ID</label> <input type="text" id="studentID" name="studentID"
-												class="form-control form-control-lg" value="${student.getStudentID()}" required />
+											<label class="form-label" for="studentID">Student ID</label>
+											<input type="text" id="studentID" name="studentID"
+												class="form-control form-control-lg"
+												value="${student.getStudentID()}" required />
+											<p class="text-danger">Do not change this field</p>
 										</div>
 
 									</div>
@@ -52,9 +54,10 @@
 									<div class="col-md-6 mb-4">
 
 										<div class="form-outline">
-											<label class="form-label" for="className">Class</label>
-											<input type="text" id="className" name="className"
-												class="form-control form-control-lg" value="${student.getClassName()}" required />
+											<label class="form-label" for="className">Class</label> <input
+												type="text" id="className" name="className"
+												class="form-control form-control-lg"
+												value="${student.getClassName()}" required />
 										</div>
 
 									</div>
@@ -66,7 +69,8 @@
 										<div class="form-outline">
 											<label class="form-label" for="firstName">First Name</label>
 											<input type="text" id="firstName" name="firstName"
-												class="form-control form-control-lg" value="${student.getFirstName()}" required />
+												class="form-control form-control-lg"
+												value="${student.getFirstName()}" required />
 										</div>
 
 									</div>
@@ -75,7 +79,8 @@
 										<div class="form-outline">
 											<label class="form-label" for="lastName">Last Name</label> <input
 												type="text" id="lastName" name="lastName"
-												class="form-control form-control-lg" value="${student.getLastName()}" required />
+												class="form-control form-control-lg"
+												value="${student.getLastName()}" required />
 										</div>
 
 									</div>
@@ -87,7 +92,8 @@
 										<div class="form-outline datepicker w-100">
 											<label for="birthday" class="form-label">Birthday</label> <input
 												type="date" name="birthday"
-												class="form-control form-control-lg" id="birthday" value="${student.getBirthday() }" required />
+												class="form-control form-control-lg" id="birthday"
+												value="${student.getBirthday() }" required />
 										</div>
 
 									</div>
@@ -97,20 +103,23 @@
 
 										<div class="form-check form-check-inline">
 											<input class="form-check-input" type="radio" name="gender"
-												id="female" value="female" checked /> <label
+												id="female" value="female"
+												${student.getGender() == "female" ? "checked" : ""} /> <label
 												class="form-check-label" for="female">Female</label>
 										</div>
 
 										<div class="form-check form-check-inline">
 											<input class="form-check-input" type="radio" name="gender"
-												id="male" value="male" /> <label class="form-check-label"
-												for="male">Male</label>
+												id="male" value="male"
+												${student.getGender() == "male" ? "checked" : ""} /> <label
+												class="form-check-label" for="male">Male</label>
 										</div>
 
 										<div class="form-check form-check-inline">
 											<input class="form-check-input" type="radio" name="gender"
-												id="orther" value="orther" /> <label
-												class="form-check-label" for="orther">Other</label>
+												id="orther" value="other"
+												${student.getGender() == "other" ? "checked" : ""} /> <label
+												class="form-check-label" for="other">Other</label>
 										</div>
 
 									</div>
@@ -122,7 +131,8 @@
 										<div class="form-outline">
 											<label class="form-label" for="email">Email</label> <input
 												type="email" id="email" name="email"
-												class="form-control form-control-lg" value="${student.getEmail()}" required />
+												class="form-control form-control-lg"
+												value="${student.getEmail()}" required />
 										</div>
 
 									</div>
@@ -131,15 +141,16 @@
 										<div class="form-outline">
 											<label class="form-label" for="phoneNumber">Phone
 												Number</label> <input type="tel" id="phoneNumber" name="phoneNumber"
-												class="form-control form-control-lg" value="${student.getPhoneNumber()}" required />
+												class="form-control form-control-lg"
+												value="${student.getPhoneNumber()}" required />
 										</div>
 
 									</div>
 								</div>
 
 								<div class="mt-4 pt-2">
-									<input class="btn btn-primary btn-rounded btn-sm my-0" type="submit"
-										value="Submit" />
+									<input class="btn btn-primary btn-rounded btn-sm my-0"
+										type="submit" value="Submit" />
 								</div>
 
 							</form>

@@ -5,6 +5,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -14,51 +16,61 @@ import java.util.List;
  */
 public class EditRSP extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public EditRSP() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public EditRSP() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		RSPDBContext rspDBContext = new RSPDBContext();
-		SPDBContext spDBContext = new SPDBContext();
-		StudentDBContext studentDBContext = new StudentDBContext();
-		LecturerDBContext lecturerDBContext = new LecturerDBContext();
+		HttpSession session = request.getSession();
+		User user = (User) session.getAttribute("userSession");
+		if (user == null) {
+			response.sendRedirect("LoginPage.jsp");
+		} else {
+			RSPDBContext rspDBContext = new RSPDBContext();
+			SPDBContext spDBContext = new SPDBContext();
+			StudentDBContext studentDBContext = new StudentDBContext();
+			LecturerDBContext lecturerDBContext = new LecturerDBContext();
 //		String rspID = request.getParameter("rspID");
-		if (request.getParameter("rspID") != null && !request.getParameter("rspID").isEmpty()) {
-			try {
+			if (request.getParameter("rspID") != null && !request.getParameter("rspID").isEmpty()) {
+				try {
 //				List<RSP> rspList = rspDBContext.getAllRSPs();
-				List<SP> spList = spDBContext.getAllSPs();
-				List<Student> studentList = studentDBContext.getAllStudents();
-				List<Lecturer> lecturerList = lecturerDBContext.getAllLecturers();
-				
-				RSP rsp = rspDBContext.getRSPbyID(request.getParameter("rspID"));
+					List<SP> spList = spDBContext.getAllSPs();
+					List<Student> studentList = studentDBContext.getAllStudents();
+					List<Lecturer> lecturerList = lecturerDBContext.getAllLecturers();
+
+					RSP rsp = rspDBContext.getRSPbyID(request.getParameter("rspID"));
 
 //				request.setAttribute("ListRSPs", rspList);
-				request.setAttribute("ListSPs", spList);
-				request.setAttribute("ListStudents", studentList);
-				request.setAttribute("ListLecturers", lecturerList);
-				request.setAttribute("rsp", rsp);
-				request.getRequestDispatcher("RSPEdit.jsp").forward(request, response);
-			} catch (ClassNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+					request.setAttribute("ListSPs", spList);
+					request.setAttribute("ListStudents", studentList);
+					request.setAttribute("ListLecturers", lecturerList);
+					request.setAttribute("rsp", rsp);
+					request.getRequestDispatcher("RSPEdit.jsp").forward(request, response);
+				} catch (ClassNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		}
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		try {
 			String rspID = request.getParameter("rspID");

@@ -11,7 +11,7 @@ import java.util.List;
 public class LecturerDBContext {
 	Connection c;
 
-	// Test connection
+	// Connection
 	public LecturerDBContext() {
 		try {
 			c = dbConnect.initializeDatabase();
