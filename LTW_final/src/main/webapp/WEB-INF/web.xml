@@ -2,9 +2,9 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
   <display-name>LTW-final</display-name>
   <welcome-file-list>
-    <welcome-file>HomePage.html</welcome-file>
-    <welcome-file>HomePage.htm</welcome-file>
-    <welcome-file>HomePage.jsp</welcome-file>
+    <welcome-file>LoginPage.html</welcome-file>
+    <welcome-file>LoginPage.htm</welcome-file>
+    <welcome-file>LoginPage.jsp</welcome-file>
     <welcome-file>default.html</welcome-file>
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>

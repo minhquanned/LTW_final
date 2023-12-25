@@ -33,7 +33,7 @@
 							<h3 class="mb-4 pb-2 pb-md-0 mb-md-5 text-center">
 								<button type="button"
 									class="btn btn-danger btn-rounded btn-sm my-0"
-									onclick="location.href='/LTW_final'">
+									onclick="location.href='/LTW_final/HomePage.jsp'">
 									<i class="fa-solid fa-chevron-left"></i>
 								</button>
 								Subjects List

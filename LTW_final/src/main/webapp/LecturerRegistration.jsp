@@ -31,7 +31,7 @@
 							<h3 class="mb-4 pb-2 pb-md-0 mb-md-5 text-center">
 								<button type="button"
 									class="btn btn-danger btn-rounded btn-sm my-0"
-									onclick="history.back()">
+									onclick="location.href='/LTW_final/LecturerServlet'">
 									<i class="fa-solid fa-chevron-left"></i>
 								</button>
 								Lecturer Registration
