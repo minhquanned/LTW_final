@@ -47,7 +47,7 @@
 									<div class="col-md-6 mb-4">
 
 										<div class="form-outline">
-											<label class="form-label" for="lecturerID">SP ID</label> <input
+											<label class="form-label required" for="lecturerID">SP ID</label> <input
 												type="text" id="spID" name="spID"
 												class="form-control form-control-lg" required />
 										</div>
@@ -57,7 +57,7 @@
 									<div class="col-md-6 mb-4">
 
 										<div class="form-outline">
-											<label class="form-label" for="spName">SP Name</label> <input
+											<label class="form-label required" for="spName">SP Name</label> <input
 												type="text" id="spName" name="spName"
 												class="form-control form-control-lg" required />
 										</div>
@@ -69,7 +69,7 @@
 									<div class="col-md-6 mb-4">
 
 										<div class="form-outline">
-											<label class="form-label" for="schoolYear">School
+											<label class="form-label required" for="schoolYear">School
 												Year</label><br> <select class="select form-control-lg"
 												id="schoolYear" name="schoolYear" required>
 												<option value="NULL" disabled selected>Choose
@@ -85,7 +85,7 @@
 									<div class="col-md-6 mb-4">
 
 										<div class="form-outline">
-											<label class="form-label" for="spPart">Part</label><br>
+											<label class="form-label required" for="spPart">Part</label><br>
 											<select class="select form-control-lg" id="spPart"
 												name="spPart" required>
 												<option value="NULL" disabled selected>Choose
@@ -103,7 +103,7 @@
 										<div>
 
 											<label class="form-label select-label">Subject</label><br>
-											<select class="select form-control-lg" id="subjectID"
+											<select class="select form-control-lg required" id="subjectID"
 												name="subjectID" required>
 												<option value="NULL" disabled selected>Choose
 													option</option>

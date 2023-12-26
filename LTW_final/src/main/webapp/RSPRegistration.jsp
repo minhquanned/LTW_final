@@ -47,7 +47,7 @@
 									<div class="col-md-6 mb-4">
 
 										<div class="form-outline">
-											<label class="form-label" for="rspID">ID</label> <input
+											<label class="form-label required" for="rspID">ID</label> <input
 												type="text" id="rspID" name="rspID"
 												class="form-control form-control-lg" required />
 										</div>
@@ -57,7 +57,7 @@
 									<div class="col-md-6 mb-4">
 
 										<div class="form-outline">
-											<label class="form-label" for="spName">Specialized
+											<label class="form-label required" for="spName">Specialized
 												Projects</label><br> <select class="select form-control-lg"
 												id="spID" name="spID" required>
 												<option value="NULL" disabled selected>Choose
@@ -77,7 +77,7 @@
 									<div class="col-md-6 mb-4">
 
 										<div class="form-outline">
-											<label class="form-label" for="studentName">Student</label><br>
+											<label class="form-label required" for="studentName">Student</label><br>
 											<select class="select form-control-lg" id="studentID"
 												name="studentID" required>
 												<option value="NULL" disabled selected>Choose
@@ -94,7 +94,7 @@
 									<div class="col-md-6 mb-4">
 
 										<div class="form-outline">
-											<label class="form-label" for="lecturerName">Lecturer</label><br>
+											<label class="form-label required" for="lecturerName">Lecturer</label><br>
 											<select class="select form-control-lg" id="lecturerID"
 												name="lecturerID" required>
 												<option value="NULL" disabled selected>Choose

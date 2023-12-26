@@ -20,7 +20,7 @@
 	rel="stylesheet" />
 <link rel="shortcut icon" type="x-icon" href="IMG/Logo.png">
 <link rel="stylesheet" type="text/css" href="CSS/index.css">
-<title>Specialized Projects Registration</title>
+<title>Specialized Projects Edit</title>
 </head>
 
 <script type="text/javascript"></script>
@@ -39,7 +39,7 @@
 									onclick="history.back()">
 									<i class="fa-solid fa-chevron-left"></i>
 								</button>
-								Specialized Projects Registration
+								Specialized Projects Edit
 							</h3>
 							<form action="EditSP" method="post">
 
@@ -47,11 +47,11 @@
 									<div class="col-md-6 mb-4">
 
 										<div class="form-outline">
-											<label class="form-label" for="spID">SP ID</label> <input
+											<label class="form-label required" for="spID">SP ID</label> <input
 												type="text" id="spID" name="spID"
 												class="form-control form-control-lg" value="${sp.getSpID()}"
 												required />
-												<p class="text-danger">Do not change this field</p>
+											<p class="text-danger">Do not change this field</p>
 										</div>
 
 									</div>
@@ -59,7 +59,7 @@
 									<div class="col-md-6 mb-4">
 
 										<div class="form-outline">
-											<label class="form-label" for="spName">SP Name</label> <input
+											<label class="form-label required" for="spName">SP Name</label> <input
 												type="text" id="spName" name="spName"
 												class="form-control form-control-lg"
 												value="${sp.getSpName()}" required />
@@ -72,16 +72,16 @@
 									<div class="col-md-6 mb-4">
 
 										<div class="form-outline">
-											<label class="form-label" for="schoolYear">School
+											<label class="form-label required" for="schoolYear">School
 												Year</label><br> <select class="select form-control-lg"
 												id="schoolYear" name="schoolYear" required>
 												<option value="NULL" disabled selected>Choose
 													option</option>
 												<c:forEach var="item" begin="2000" end="2023">
-													<option value="${item}">${item}</option>
+													<option value="${item}"
+														${sp.getSchoolYear() == item ? "selected" : ""}>${item}</option>
 												</c:forEach>
 											</select>
-											<p class="text-primary">Last choice: ${sp.getSchoolYear()}</p>
 										</div>
 
 									</div>
@@ -89,15 +89,14 @@
 									<div class="col-md-6 mb-4">
 
 										<div class="form-outline">
-											<label class="form-label" for="spPart">Part</label><br>
+											<label class="form-label required" for="spPart">Part</label><br>
 											<select class="select form-control-lg" id="spPart"
 												name="spPart" required>
-												<option value="NULL" disabled selected>Choose
+												<option value="NULL" disabled>Choose
 													option</option>
-												<option value="1">1</option>
-												<option value="2">2</option>
+												<option value="1" ${sp.getSpPart() == 1 ? "selected" : ""}>1</option>
+												<option value="2" ${sp.getSpPart() == 2 ? "selected" : ""}>2</option>
 											</select>
-											<p class="text-primary">Last choice: ${sp.getSpPart()}</p>
 										</div>
 
 									</div>
@@ -107,16 +106,16 @@
 									<div class="col-md-6 mb-4 pb-2">
 										<div>
 
-											<label class="form-label select-label">Subject</label><br>
+											<label class="form-label select-label required">Subject</label><br>
 											<select class="select form-control-lg" id="subjectID"
 												name="subjectID" required>
-												<option value="NULL" disabled selected>Choose
+												<option value="NULL" disabled>Choose
 													option</option>
 												<c:forEach var="item" items="${ListSubjects}">
-													<option value="${item.getSubjectID()}">${item.getSubjectID()} - ${item.getSubjectName()}</option>
+													<option value="${item.getSubjectID()}" ${sp.getSubjectID() == item.getSubjectID() ? "selected" : ""}>${item.getSubjectID()}
+														- ${item.getSubjectName()}</option>
 												</c:forEach>
 											</select>
-											<p class="text-primary">Last choice: ${sp.getSubjectID()}</p>
 										</div>
 
 									</div>

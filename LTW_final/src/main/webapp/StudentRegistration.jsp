@@ -42,7 +42,7 @@
 									<div class="col-md-6 mb-4">
 
 										<div class="form-outline">
-											<label class="form-label" for="studentID">Student ID</label>
+											<label class="form-label required" for="studentID">Student ID</label>
 											<input type="text" id="studentID" name="studentID"
 												class="form-control form-control-lg" required />
 										</div>
@@ -51,7 +51,7 @@
 									<div class="col-md-6 mb-4">
 
 										<div class="form-outline">
-											<label class="form-label" for="className">Class</label> <input
+											<label class="form-label required" for="className">Class</label> <input
 												type="text" id="className" name="className"
 												class="form-control form-control-lg" required />
 										</div>
@@ -63,7 +63,7 @@
 									<div class="col-md-6 mb-4">
 
 										<div class="form-outline">
-											<label class="form-label" for="firstName">First Name</label>
+											<label class="form-label required" for="firstName">First Name</label>
 											<input type="text" id="firstName" name="firstName"
 												class="form-control form-control-lg" required />
 										</div>
@@ -72,7 +72,7 @@
 									<div class="col-md-6 mb-4">
 
 										<div class="form-outline">
-											<label class="form-label" for="lastName">Last Name</label> <input
+											<label class="form-label required" for="lastName">Last Name</label> <input
 												type="text" id="lastName" name="lastName"
 												class="form-control form-control-lg" required />
 										</div>
@@ -84,7 +84,7 @@
 									<div class="col-md-6 mb-4 d-flex align-items-center">
 
 										<div class="form-outline datepicker w-100">
-											<label for="birthday" class="form-label">Birthday</label>
+											<label for="birthday" class="form-label required">Birthday</label>
 											<input type="date" class="form-control form-control-lg"
 												id="birthday" name="birthday" required />
 										</div>
@@ -92,7 +92,7 @@
 									</div>
 									<div class="col-md-6 mb-4">
 
-										<h6 class="mb-2 pb-1">Gender:</h6>
+										<h6 class="mb-2 pb-1 required">Gender:</h6>
 
 										<div class="form-check form-check-inline">
 											<input class="form-check-input" type="radio"
@@ -120,7 +120,7 @@
 									<div class="col-md-6 mb-4 pb-2">
 
 										<div class="form-outline">
-											<label class="form-label" for="email">Email</label> <input
+											<label class="form-label required" for="email">Email</label> <input
 												type="email" id="email" name="email"
 												class="form-control form-control-lg" required />
 										</div>
@@ -129,7 +129,7 @@
 									<div class="col-md-6 mb-4 pb-2">
 
 										<div class="form-outline">
-											<label class="form-label" for="phoneNumber">Phone
+											<label class="form-label required" for="phoneNumber">Phone
 												Number</label> <input type="tel" id="phoneNumber" name="phoneNumber"
 												class="form-control form-control-lg" required />
 										</div>

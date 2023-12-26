@@ -20,7 +20,7 @@
 	rel="stylesheet" />
 <link rel="shortcut icon" type="x-icon" href="IMG/Logo.png">
 <link rel="stylesheet" type="text/css" href="CSS/index.css">
-<title>In Charge of the Specialized Projects Registration</title>
+<title>In Charge of the Specialized Projects Edit</title>
 </head>
 
 <script type="text/javascript"></script>
@@ -39,7 +39,7 @@
 									onclick="history.back()">
 									<i class="fa-solid fa-chevron-left"></i>
 								</button>
-								In Charge of the Specialized Projects Registration
+								In Charge of the Specialized Projects Edit
 							</h3>
 							<form action="EditRSP" method="post">
 
@@ -47,7 +47,7 @@
 									<div class="col-md-6 mb-4">
 
 										<div class="form-outline">
-											<label class="form-label" for="rspID">ID</label> <input
+											<label class="form-label required" for="rspID">ID</label> <input
 												type="text" id="rspID" name="rspID"
 												class="form-control form-control-lg"
 												value="${rsp.getRspID()}" required />
@@ -59,17 +59,16 @@
 									<div class="col-md-6 mb-4">
 
 										<div class="form-outline">
-											<label class="form-label" for="spName">Specialized
+											<label class="form-label required" for="spName">Specialized
 												Projects</label><br> <select class="select form-control-lg"
 												id="spID" name="spID" required>
-												<option value="NULL" disabled selected>Choose
+												<option value="NULL" disabled>Choose
 													option</option>
 												<c:forEach var="item" items="${ListSPs}">
-													<option value="${item.getSpID()}">${item.getSpID()}
+													<option value="${item.getSpID()}" ${rsp.getSpID() == item.getSpID() ? "selected" : ""}>${item.getSpID()}
 														- ${item.getSpName()}</option>
 												</c:forEach>
 											</select>
-											<p class="text-primary">Last choice: ${rsp.getSpID()}</p>
 										</div>
 
 									</div>
@@ -80,17 +79,16 @@
 									<div class="col-md-6 mb-4">
 
 										<div class="form-outline">
-											<label class="form-label" for="studentName">Student</label><br>
+											<label class="form-label required" for="studentName">Student</label><br>
 											<select class="select form-control-lg" id="studentID"
 												name="studentID" required>
-												<option value="NULL" disabled selected>Choose
+												<option value="NULL" disabled>Choose
 													option</option>
 												<c:forEach var="item" items="${ListStudents}">
-													<option value="${item.getStudentID()}">${item.getStudentID()}
+													<option value="${item.getStudentID()}" ${rsp.getStudentID() == item.getStudentID() ? "selected" : ""}>${item.getStudentID()}
 														- ${item.getLastName()} ${item.getFirstName()}</option>
 												</c:forEach>
 											</select>
-											<p class="text-primary">Last choice: ${rsp.getStudentID()}</p>
 										</div>
 
 									</div>
@@ -98,17 +96,16 @@
 									<div class="col-md-6 mb-4">
 
 										<div class="form-outline">
-											<label class="form-label" for="lecturerName">Lecturer</label><br>
+											<label class="form-label required" for="lecturerName">Lecturer</label><br>
 											<select class="select form-control-lg" id="lecturerID"
 												name="lecturerID" required>
-												<option value="NULL" disabled selected>Choose
+												<option value="NULL" disabled>Choose
 													option</option>
 												<c:forEach var="item" items="${ListLecturers}">
-													<option value="${item.getLecturerID()}">${item.getLecturerID()}
+													<option value="${item.getLecturerID()}" ${rsp.getLecturerID() == item.getLecturerID() ? "selected" : ""}>${item.getLecturerID()}
 														- ${item.getLastName()} ${item.getFirstName()}</option>
 												</c:forEach>
 											</select>
-											<p class="text-primary">Last choice: ${rsp.getLecturerID()}</p>
 										</div>
 
 									</div>

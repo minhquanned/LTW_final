@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,7 +47,7 @@
 									<div class="col-md-6 mb-4">
 
 										<div class="form-outline">
-											<label class="form-label" for="subjectID">Subject ID</label>
+											<label class="form-label required" for="subjectID">Subject ID</label>
 											<input type="text" id="subjectID" name="subjectID"
 												class="form-control form-control-lg" value="${subject.getSubjectID()}" required />
 										</div>
@@ -55,7 +56,7 @@
 
 									<div class="col-md-6 mb-4">
 										<div class="form-outline">
-											<label class="form-label" for="subjectName">Subject
+											<label class="form-label required" for="subjectName">Subject
 												Name</label> <input type="text" id="subjectName" name="subjectName"
 												class="form-control form-control-lg" value="${subject.getSubjectName()}" required />
 										</div>
@@ -67,20 +68,13 @@
 									
 									<div class="col-md-6 mb-4 pb-2">
 										<div>
-											<label class="form-label select-label">Number of
+											<label class="form-label select-label required">Number of
 												credits</label><br> <select class="select form-control-lg"
 												id="noC" name="noC" required>
-												<option value="0" disabled selected>Choose option</option>
-												<option value="1">1</option>
-												<option value="2">2</option>
-												<option value="3">3</option>
-												<option value="4">4</option>
-												<option value="5">5</option>
-												<option value="6">6</option>
-												<option value="7">7</option>
-												<option value="8">8</option>
-												<option value="9">9</option>
-												<option value="10">10</option>
+												<option value="0" disabled>Choose option</option>
+												<c:forEach var="i" begin="1" end="10">
+													<option value="${i}" ${subject.getNoC() == i ? "selected" : ""}>${i}</option>
+												</c:forEach>
 											</select>
 										</div>
 									</div>

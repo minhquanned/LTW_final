@@ -45,7 +45,7 @@
 									<div class="col-md-6 mb-4">
 
 										<div class="form-outline">
-											<label class="form-label" for="lecturerID">Subject ID</label>
+											<label class="form-label required" for="lecturerID">Subject ID</label>
 											<input type="text" id="subjectID" name="subjectID"
 												class="form-control form-control-lg" required />
 										</div>
@@ -55,7 +55,7 @@
 									<div class="col-md-6 mb-4">
 
 										<div class="form-outline">
-											<label class="form-label" for="subjectName">Subject
+											<label class="form-label required" for="subjectName">Subject
 												Name</label> <input type="text" id="subjectName" name="subjectName"
 												class="form-control form-control-lg" required />
 										</div>
@@ -67,7 +67,7 @@
 									<div class="col-md-6 mb-4 pb-2">
 										<div>
 
-											<label class="form-label select-label">Number of
+											<label class="form-label select-label required">Number of
 												credits</label><br> <select class="select form-control-lg"
 												id="noC" name="noC" required>
 												<option value="0" disabled selected>Choose option</option>
