@@ -42,8 +42,8 @@
 									<div class="col-md-6 mb-4">
 
 										<div class="form-outline">
-											<label class="form-label required" for="studentID">Student ID</label>
-											<input type="text" id="studentID" name="studentID"
+											<label class="form-label required" for="studentID">Student
+												ID</label> <input type="text" id="studentID" name="studentID"
 												class="form-control form-control-lg" required />
 										</div>
 
@@ -51,8 +51,8 @@
 									<div class="col-md-6 mb-4">
 
 										<div class="form-outline">
-											<label class="form-label required" for="className">Class</label> <input
-												type="text" id="className" name="className"
+											<label class="form-label required" for="className">Class</label>
+											<input type="text" id="className" name="className"
 												class="form-control form-control-lg" required />
 										</div>
 
@@ -63,8 +63,8 @@
 									<div class="col-md-6 mb-4">
 
 										<div class="form-outline">
-											<label class="form-label required" for="firstName">First Name</label>
-											<input type="text" id="firstName" name="firstName"
+											<label class="form-label required" for="firstName">First
+												Name</label> <input type="text" id="firstName" name="firstName"
 												class="form-control form-control-lg" required />
 										</div>
 
@@ -72,8 +72,8 @@
 									<div class="col-md-6 mb-4">
 
 										<div class="form-outline">
-											<label class="form-label required" for="lastName">Last Name</label> <input
-												type="text" id="lastName" name="lastName"
+											<label class="form-label required" for="lastName">Last
+												Name</label> <input type="text" id="lastName" name="lastName"
 												class="form-control form-control-lg" required />
 										</div>
 
@@ -95,22 +95,21 @@
 										<h6 class="mb-2 pb-1 required">Gender:</h6>
 
 										<div class="form-check form-check-inline">
-											<input class="form-check-input" type="radio"
-												name="gender" id="female" value="female"
-												checked /> <label class="form-check-label"
-												for="female">Female</label>
+											<input class="form-check-input" type="radio" name="gender"
+												id="Male" value="Male" checked /> <label
+												class="form-check-label" for="Male">Male</label>
 										</div>
 
 										<div class="form-check form-check-inline">
-											<input class="form-check-input" type="radio"
-												name="gender" id="male" value="male" />
-											<label class="form-check-label" for="male">Male</label>
+											<input class="form-check-input" type="radio" name="gender"
+												id="Female" value="Female" /> <label
+												class="form-check-label" for="Female">Female</label>
 										</div>
 
 										<div class="form-check form-check-inline">
-											<input class="form-check-input" type="radio"
-												name="gender" id="other" value="other" />
-											<label class="form-check-label" for="other">Other</label>
+											<input class="form-check-input" type="radio" name="gender"
+												id="Other" value="Other" /> <label class="form-check-label"
+												for="Other">Other</label>
 										</div>
 
 									</div>
@@ -120,8 +119,8 @@
 									<div class="col-md-6 mb-4 pb-2">
 
 										<div class="form-outline">
-											<label class="form-label required" for="email">Email</label> <input
-												type="email" id="email" name="email"
+											<label class="form-label required" for="email">Email</label>
+											<input type="email" id="email" name="email"
 												class="form-control form-control-lg" required />
 										</div>
 
@@ -138,8 +137,8 @@
 								</div>
 
 								<div class="mt-4 pt-2">
-									<input class="btn btn-primary btn-rounded btn-sm my-0" type="submit"
-										value="Submit" />
+									<input class="btn btn-primary btn-rounded btn-sm my-0"
+										type="submit" value="Submit" />
 								</div>
 
 							</form>

@@ -1,7 +1,7 @@
-<%@page import="com.java.be.RSPDBContext"%>
-<%@page import="com.java.be.SPDBContext"%>
-<%@page import="com.java.be.LecturerDBContext"%>
-<%@page import="com.java.be.StudentDBContext"%>
+<%@page import="com.java.be.DBContext.RSPDBContext"%>
+<%@page import="com.java.be.DBContext.SPDBContext"%>
+<%@page import="com.java.be.DBContext.LecturerDBContext"%>
+<%@page import="com.java.be.DBContext.StudentDBContext"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -71,15 +71,36 @@
 
 										<tr>
 											<td>${item.getRspID()}</td>
-											<!--<td>${spDBContext.getSPbyID(item.getSpID()).getSpName()}</td> -->
 											<td>${item.getSpID()}</td>
 											<td>${item.getStudentID()}</td>
 											<td>${item.getLecturerID()}</td>
-											<td><span class="table-remove edit">
-													<button type="button"
-														class="btn btn-primary btn-rounded btn-sm my-0"
-														onclick="moreInfo('${item.getRspID()}','${item.getSpID()}','${item.getStudentID()}','${item.getLecturerID()}')">More
-														Info</button>
+											<td><span> <input
+													class="btn btn-primary btn-rounded btn-sm my-0"
+													data-bs-toggle="modal"
+													data-bs-target="#myModal-${item.getRspID()}" type="button"
+													value="More Info">
+													<div class="modal fade" id="myModal-${item.getRspID()}">
+														<div class="modal-dialog">
+															<div class="modal-content">
+																<div class="modal-header">
+																	<h5 class="modal-title">In Charge of the Specialized Project Info</h5>
+																	<input class="btn-close" type="button"
+																		data-bs-dismiss="modal">
+																</div>
+																<div class="modal-body">
+																	<label class="form-lable">ID: ${item.getRspID()}</label><br> <label
+																		class="form-lable">Specialized Project: ${item.getSpID()}</label><br>
+																	<label class="form-lable">Student:
+																		${item.getStudentID()}</label><br> <label
+																		class="form-lable">Lecturer: ${item.getLecturerID()}</label><br>
+																</div>
+																<div class="modal-footer">
+																	<button type="button" class="btn btn-danger"
+																		data-dismiss="modal">Close</button>
+																</div>
+															</div>
+														</div>
+													</div>
 											</span></td>
 											<td><span>
 													<button type="button"
@@ -97,22 +118,7 @@
 
 									</c:forEach>
 
-									<script type="text/javascript">
-										function moreInfo(rspID, spID,
-												studentID, lecturerID) {
-											alert("ID: "
-													+ rspID
-													+ "\Specialized Project ID: "
-													+ spID + "\nStudent ID: "
-													+ studentID
-													+ "\nLecturer ID: "
-													+ lecturerID);
-										}
-									</script>
-
 								</table>
-
-
 
 							</form>
 						</div>
@@ -124,5 +130,10 @@
 	<!-- MDB -->
 	<script type="text/javascript"
 		src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"></script>
+	<!-- Option 1: Bootstrap Bundle with Popper -->
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
 </body>
 </html>

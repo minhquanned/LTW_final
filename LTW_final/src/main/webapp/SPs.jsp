@@ -1,4 +1,4 @@
-<%@page import="com.java.be.SP"%>
+<%@page import="com.java.be.bean.SP"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -56,7 +56,7 @@
 										<th>School Year</th>
 										<th>Part</th>
 										<th>Subject ID</th>
-										<th class="text-center" colspan="3"> </th>
+										<th class="text-center" colspan="3"></th>
 									</tr>
 
 									<c:forEach var="item" items="${ListSPs}">
@@ -65,15 +65,41 @@
 											<td>${item.getSpName()}</td>
 											<td>${item.getSchoolYear()}</td>
 											<td>${item.getSpPart()}</td>
-											<td>${item.getSpID()}</td>
-											<td><span class="table-remove edit">
-													<button type="button"
-														class="btn btn-primary btn-rounded btn-sm my-0"
-														onclick="moreInfo('${item.getSpID()}','${item.getSpName()}','${item.getSchoolYear()}','${item.getSpPart()}','${item.getSubjectID()}')">More Info</button>
+											<td>${item.getSubjectID()}</td>
+											<td><span> <input
+													class="btn btn-primary btn-rounded btn-sm my-0"
+													data-bs-toggle="modal"
+													data-bs-target="#myModal-${item.getSpID()}" type="button"
+													value="More Info">
+													<div class="modal fade" id="myModal-${item.getSpID()}">
+														<div class="modal-dialog">
+															<div class="modal-content">
+																<div class="modal-header">
+																	<h5 class="modal-title">Specialized Project Info</h5>
+																	<input class="btn-close" type="button"
+																		data-bs-dismiss="modal">
+																</div>
+																<div class="modal-body">
+																	<label class="form-lable">Specialized Project
+																		ID: ${item.getSpID()}</label><br> <label
+																		class="form-lable">Name: ${item.getSpName()}</label><br>
+																	<label class="form-lable">School Year:
+																		${item.getSchoolYear()}</label><br> <label
+																		class="form-lable">Part: ${item.getSpPart()}</label><br>
+																	<label class="form-lable">Subject ID:
+																		${item.getSubjectID()}</label><br>
+																</div>
+																<div class="modal-footer">
+																	<button type="button" class="btn btn-danger"
+																		data-dismiss="modal">Close</button>
+																</div>
+															</div>
+														</div>
+													</div>
 											</span></td>
 											<td><span>
 													<button type="button"
-														class="btn btn-primary btn-rounded btn-sm my-0" 
+														class="btn btn-primary btn-rounded btn-sm my-0"
 														onclick="location.href='/LTW_final/EditSP?spID=${item.getSpID()}'">
 														Edit</button>
 											</span></td>
@@ -87,19 +113,7 @@
 
 									</c:forEach>
 
-									<script type="text/javascript">
-										function moreInfo(spID, spName, schoolYear, spPart, subjectID) {
-											alert("Specialized Project ID: " + spID
-													+ "\nName: " + spName
-													+ "\nSchool Year: " + schoolYear
-													+ "\nPart: " + spPart
-													+ "\nSubject ID: " + subjectID);
-										}
-									</script>
-
 								</table>
-
-
 
 							</form>
 						</div>
@@ -111,5 +125,10 @@
 	<!-- MDB -->
 	<script type="text/javascript"
 		src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"></script>
+	<!-- Option 1: Bootstrap Bundle with Popper -->
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
 </body>
 </html>

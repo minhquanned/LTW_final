@@ -102,20 +102,20 @@
 
 										<div class="form-check form-check-inline">
 											<input class="form-check-input" type="radio" name="gender"
-												id="female" value="female" checked /> <label
-												class="form-check-label" for="female">Female</label>
+												id="Male" value="Male" checked /> <label
+												class="form-check-label" for="Male">Male</label>
 										</div>
 
 										<div class="form-check form-check-inline">
 											<input class="form-check-input" type="radio" name="gender"
-												id="male" value="male" /> <label class="form-check-label"
-												for="male">Male</label>
+												id="Female" value="Female" /> <label
+												class="form-check-label" for="Female">Female</label>
 										</div>
 
 										<div class="form-check form-check-inline">
 											<input class="form-check-input" type="radio" name="gender"
-												id="orther" value="orther" /> <label
-												class="form-check-label" for="orther">Other</label>
+												id="Other" value="Other" /> <label class="form-check-label"
+												for="Other">Other</label>
 										</div>
 
 									</div>

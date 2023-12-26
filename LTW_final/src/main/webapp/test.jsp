@@ -23,19 +23,25 @@
 </head>
 <body>
 	<div class="container mt-5">
-		<input class="btn btn-primary btn-rounded btn-sm my-0" data-bs-toggle="modal"
-			data-bs-target="#myModal" type="button" value="Test Popup">
+		<input class="btn btn-primary btn-rounded btn-sm my-0"
+			data-bs-toggle="modal" data-bs-target="#myModal" type="button"
+			value="More Info">
 		<div class="modal" id="myModal">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
 						<h5 class="modal-title">Subject Info</h5>
-						<input class="btn btn-danger btn-close btn-rounded btn-lg my-0" type="button" data-bs-dismiss="modal">
+						<input class="btn-close"
+							type="button" data-bs-dismiss="modal">
 					</div>
 					<div class="modal-body">
-						<label class="form-lable">Subject ID:</label>
-						<label class="form-lable required">Subject Name:</label>
-						<label class="form-lable required">Number of credits:</label>
+						<label class="form-lable">Subject ID:</label><br> <label
+							class="form-lable">Subject Name:</label><br> <label
+							class="form-lable">Number of credits:</label><br>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-danger"
+							data-dismiss="modal">Close</button>
 					</div>
 				</div>
 			</div>

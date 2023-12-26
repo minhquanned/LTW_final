@@ -55,7 +55,7 @@
 										<th>Class</th>
 										<th>First Name</th>
 										<th>Last Name</th>
-										<th class="text-center" colspan="3"> </th>
+										<th class="text-center" colspan="3"></th>
 									</tr>
 									<c:forEach var="item" items="${ListStudents}">
 
@@ -64,10 +64,42 @@
 											<td>${item.getClassName()}</td>
 											<td>${item.getFirstName()}</td>
 											<td>${item.getLastName()}</td>
-											<td><span class="table-remove edit">
-													<button type="button"
-														class="btn btn-primary btn-rounded btn-sm my-0"
-														onclick="moreInfo('${item.getStudentID()}','${item.getClassName()}','${item.getFirstName()}','${item.getLastName()}','${item.getBirthday()}','${item.getGender()}','${item.getEmail()}','${item.getPhoneNumber()}')">More Info</button>
+											<td><span> <input
+													class="btn btn-primary btn-rounded btn-sm my-0"
+													data-bs-toggle="modal"
+													data-bs-target="#myModal-${item.getStudentID()}"
+													type="button" value="More Info">
+													<div class="modal fade" id="myModal-${item.getStudentID()}">
+														<div class="modal-dialog">
+															<div class="modal-content">
+																<div class="modal-header">
+																	<h5 class="modal-title">Student Info</h5>
+																	<input class="btn-close" type="button"
+																		data-bs-dismiss="modal">
+																</div>
+																<div class="modal-body">
+																	<label class="form-lable">Student ID:
+																		${item.getStudentID()}</label><br> <label
+																		class="form-lable">Class:
+																		${item.getClassName()}</label><br> <label
+																		class="form-lable">First Name:
+																		${item.getFirstName()}</label><br> <label
+																		class="form-lable">Last Name:
+																		${item.getLastName()}</label><br> <label
+																		class="form-lable">Birthday:
+																		${item.getBirthday()}</label><br> <label
+																		class="form-lable">Gender: ${item.getGender()}</label>
+																	<br> <label class="form-lable">Email:
+																		${item.getEmail()}</label><br> <label class="form-lable">Phone
+																		Number: ${item.getPhoneNumber()}</label><br>
+																</div>
+																<div class="modal-footer">
+																	<button type="button" class="btn btn-danger"
+																		data-dismiss="modal">Close</button>
+																</div>
+															</div>
+														</div>
+													</div>
 											</span></td>
 											<td><span>
 													<button type="button"
@@ -85,19 +117,6 @@
 
 									</c:forEach>
 								</table>
-								
-								<script type="text/javascript">
-									function moreInfo(studentID, className, firstName, lastName, birthday, gender, email, phoneNumber) {
-										alert("Lecture ID: " + studentID
-												+ "\nClass: " + className
-												+ "\nFirst Name: " + firstName
-												+ "\nLast Name: " + lastName
-												+ "\nBirthday: " + birthday
-												+ "\nGender: " + gender
-												+ "\nEmail: " + email
-												+ "\nPhone Number: " + phoneNumber);
-									}
-								</script>
 
 							</form>
 						</div>
@@ -109,5 +128,10 @@
 	<!-- MDB -->
 	<script type="text/javascript"
 		src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"></script>
+	<!-- Option 1: Bootstrap Bundle with Popper -->
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
 </body>
 </html>

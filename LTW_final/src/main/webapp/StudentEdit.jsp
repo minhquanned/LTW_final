@@ -103,23 +103,23 @@
 
 										<div class="form-check form-check-inline">
 											<input class="form-check-input" type="radio" name="gender"
-												id="female" value="female"
-												${student.getGender() == "female" ? "checked" : ""} /> <label
-												class="form-check-label" for="female">Female</label>
+												id="Male" value="Male"
+												${student.getGender() == "Male" ? "checked" : ""} /> <label
+												class="form-check-label" for="Male">Male</label>
 										</div>
 
 										<div class="form-check form-check-inline">
 											<input class="form-check-input" type="radio" name="gender"
-												id="male" value="male"
-												${student.getGender() == "male" ? "checked" : ""} /> <label
-												class="form-check-label" for="male">Male</label>
+												id="Female" value="Female"
+												${student.getGender() == "Female" ? "checked" : ""} /> <label
+												class="form-check-label" for="Female">Female</label>
 										</div>
 
 										<div class="form-check form-check-inline">
 											<input class="form-check-input" type="radio" name="gender"
-												id="orther" value="other"
-												${student.getGender() == "other" ? "checked" : ""} /> <label
-												class="form-check-label" for="other">Other</label>
+												id="Other" value="Other"
+												${student.getGender() == "Other" ? "checked" : ""} /> <label
+												class="form-check-label" for="Other">Other</label>
 										</div>
 
 									</div>

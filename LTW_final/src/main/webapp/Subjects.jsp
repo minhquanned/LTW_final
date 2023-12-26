@@ -1,4 +1,4 @@
-<%@page import="com.java.be.Subject"%>
+<%@page import="com.java.be.bean.Subject"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -55,7 +55,7 @@
 										<th>Subject ID</th>
 										<th>Subject Name</th>
 										<th>Number of credits</th>
-										<th class="text-center" colspan="3"> </th>
+										<th class="text-center" colspan="3"></th>
 									</tr>
 
 									<c:forEach var="item" items="${ListSubjects}">
@@ -64,10 +64,35 @@
 											<td>${item.getSubjectID()}</td>
 											<td>${item.getSubjectName()}</td>
 											<td>${item.getNoC()}</td>
-											<td><span class="table-remove edit">
-													<button type="button"
-														class="btn btn-primary btn-rounded btn-sm my-0"
-														onclick="moreInfo('${item.getSubjectID()}','${item.getSubjectName()}','${item.getNoC()}')">More Info</button>
+
+											<td><span> <input
+													class="btn btn-primary btn-rounded btn-sm my-0"
+													data-bs-toggle="modal"
+													data-bs-target="#myModal-${item.getSubjectID()}"
+													type="button" value="More Info">
+													<div class="modal fade" id="myModal-${item.getSubjectID()}">
+														<div class="modal-dialog">
+															<div class="modal-content">
+																<div class="modal-header">
+																	<h5 class="modal-title">Subject Info</h5>
+																	<input class="btn-close" type="button"
+																		data-bs-dismiss="modal">
+																</div>
+																<div class="modal-body">
+																	<label class="form-lable">Subject ID:
+																		${item.getSubjectID()}</label><br> <label
+																		class="form-lable">Subject Name:
+																		${item.getSubjectName()}</label><br> <label
+																		class="form-lable">Number of credits:
+																		${item.getNoC()}</label><br>
+																</div>
+																<div class="modal-footer">
+																	<button type="button" class="btn btn-danger"
+																		data-dismiss="modal">Close</button>
+																</div>
+															</div>
+														</div>
+													</div>
 											</span></td>
 											<td><span>
 													<button type="button"
@@ -85,14 +110,6 @@
 
 									</c:forEach>
 
-									<script type="text/javascript">
-										function moreInfo(subjectID, subjectName, noC) {
-											alert("Subject ID: " + subjectID
-													+ "\nSubject Name: " + subjectName
-													+ "\nNumber of credits: " + noC);
-										}
-									</script>
-
 								</table>
 
 
@@ -107,5 +124,10 @@
 	<!-- MDB -->
 	<script type="text/javascript"
 		src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"></script>
+	<!-- Option 1: Bootstrap Bundle with Popper -->
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
 </body>
 </html>
