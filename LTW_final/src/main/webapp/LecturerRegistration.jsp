@@ -53,11 +53,13 @@
 
 										<div class="form-outline">
 											<label class="form-label required" for="position">Position</label><br>
-											<select class="select form-control-lg" name="position" required>
+											<select class="select form-control-lg" name="position"
+												required>
 												<option value="0" disabled selected>Choose option</option>
 												<option value="Tutors">Tutors</option>
 												<option value="Main lecturer">Main lecturer</option>
-												<option value="Associate Professor">Associate Professor</option>
+												<option value="Associate Professor">Associate
+													Professor</option>
 												<option value="Professor">Professor</option>
 											</select>
 										</div>
@@ -69,8 +71,8 @@
 									<div class="col-md-6 mb-4">
 
 										<div class="form-outline">
-											<label class="form-label required" for="firstName">First Name</label>
-											<input type="text" id="firstName" name="firstName"
+											<label class="form-label required" for="firstName">First
+												Name</label> <input type="text" id="firstName" name="firstName"
 												class="form-control form-control-lg" required />
 										</div>
 
@@ -78,8 +80,8 @@
 									<div class="col-md-6 mb-4">
 
 										<div class="form-outline">
-											<label class="form-label required" for="lastName">Last Name</label> <input
-												type="text" id="lastName" name="lastName"
+											<label class="form-label required" for="lastName">Last
+												Name</label> <input type="text" id="lastName" name="lastName"
 												class="form-control form-control-lg" required />
 										</div>
 
@@ -90,8 +92,8 @@
 									<div class="col-md-6 mb-4 d-flex align-items-center">
 
 										<div class="form-outline datepicker w-100">
-											<label for="birthday" class="form-label required">Birthday</label> <input
-												type="date" name="birthday"
+											<label for="birthday" class="form-label required">Birthday</label>
+											<input type="date" name="birthday"
 												class="form-control form-control-lg" id="birthday" required />
 										</div>
 
@@ -125,8 +127,8 @@
 									<div class="col-md-6 mb-4 pb-2">
 
 										<div class="form-outline">
-											<label class="form-label required" for="email">Email</label> <input
-												type="email" id="email" name="email"
+											<label class="form-label required" for="email">Email</label>
+											<input type="email" id="email" name="email"
 												class="form-control form-control-lg" required />
 										</div>
 
@@ -137,6 +139,27 @@
 											<label class="form-label required" for="phoneNumber">Phone
 												Number</label> <input type="tel" id="phoneNumber" name="phoneNumber"
 												class="form-control form-control-lg" required />
+										</div>
+
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-md-6 mb-4 pb-2">
+
+										<div class="form-outline">
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+												</div>
+												<div class="custom-file">
+													<input type="file" class="custom-file-input"
+														id="inputGroupFile01"
+														aria-describedby="inputGroupFileAddon01"> <label
+														class="custom-file-label" for="inputGroupFile01">Choose
+														file</label>
+												</div>
+											</div>
 										</div>
 
 									</div>
@@ -175,10 +198,10 @@
 
 									</div>
 								</div>
--->
+								-->
 								<div class="mt-4 pt-2">
-									<input class="btn btn-primary btn-rounded btn-sm my-0" type="submit"
-										value="Submit" />
+									<input class="btn btn-primary btn-rounded btn-sm my-0"
+										type="submit" value="Submit" />
 								</div>
 
 							</form>

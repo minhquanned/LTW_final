@@ -19,59 +19,19 @@
   </error-page>
   <servlet>
     <description></description>
-    <display-name>SubjectServlet</display-name>
-    <servlet-name>SubjectServlet</servlet-name>
-    <servlet-class>com.java.be.SubjectServlet</servlet-class>
+    <display-name>LoginServlet</display-name>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.java.be.viewServlet.LoginServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>SubjectServlet</servlet-name>
-    <url-pattern>/SubjectServlet</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>DeleteSubject</display-name>
-    <servlet-name>DeleteSubject</servlet-name>
-    <servlet-class>com.java.be.DeleteSubject</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>DeleteSubject</servlet-name>
-    <url-pattern>/DeleteSubject</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>EditSubject</display-name>
-    <servlet-name>EditSubject</servlet-name>
-    <servlet-class>com.java.be.EditSubject</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>EditSubject</servlet-name>
-    <url-pattern>/EditSubject</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>AddSubject</display-name>
-    <servlet-name>AddSubject</servlet-name>
-    <servlet-class>com.java.be.AddSubject</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>AddSubject</servlet-name>
-    <url-pattern>/AddSubject</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>AddLecturer</display-name>
-    <servlet-name>AddLecturer</servlet-name>
-    <servlet-class>com.java.be.AddLecturer</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>AddLecturer</servlet-name>
-    <url-pattern>/AddLecturer</url-pattern>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
     <display-name>LecturerServlet</display-name>
     <servlet-name>LecturerServlet</servlet-name>
-    <servlet-class>com.java.be.LecturerServlet</servlet-class>
+    <servlet-class>com.java.be.viewServlet.LecturerServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>LecturerServlet</servlet-name>
@@ -79,109 +39,9 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>EditLecturer</display-name>
-    <servlet-name>EditLecturer</servlet-name>
-    <servlet-class>com.java.be.EditLecturer</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>EditLecturer</servlet-name>
-    <url-pattern>/EditLecturer</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>StudentServlet</display-name>
-    <servlet-name>StudentServlet</servlet-name>
-    <servlet-class>com.java.be.StudentServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>StudentServlet</servlet-name>
-    <url-pattern>/StudentServlet</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>EditStudent</display-name>
-    <servlet-name>EditStudent</servlet-name>
-    <servlet-class>com.java.be.EditStudent</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>EditStudent</servlet-name>
-    <url-pattern>/EditStudent</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>AddStudent</display-name>
-    <servlet-name>AddStudent</servlet-name>
-    <servlet-class>com.java.be.AddStudent</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>AddStudent</servlet-name>
-    <url-pattern>/AddStudent</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>DeleteLecturer</display-name>
-    <servlet-name>DeleteLecturer</servlet-name>
-    <servlet-class>com.java.be.DeleteLecturer</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>DeleteLecturer</servlet-name>
-    <url-pattern>/DeleteLecturer</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>DeleteStudent</display-name>
-    <servlet-name>DeleteStudent</servlet-name>
-    <servlet-class>com.java.be.DeleteStudent</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>DeleteStudent</servlet-name>
-    <url-pattern>/DeleteStudent</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>SPServlet</display-name>
-    <servlet-name>SPServlet</servlet-name>
-    <servlet-class>com.java.be.SPServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>SPServlet</servlet-name>
-    <url-pattern>/SPServlet</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>AddSP</display-name>
-    <servlet-name>AddSP</servlet-name>
-    <servlet-class>com.java.be.AddSP</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>AddSP</servlet-name>
-    <url-pattern>/AddSP</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>DeleteSP</display-name>
-    <servlet-name>DeleteSP</servlet-name>
-    <servlet-class>com.java.be.DeleteSP</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>DeleteSP</servlet-name>
-    <url-pattern>/DeleteSP</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>EditSP</display-name>
-    <servlet-name>EditSP</servlet-name>
-    <servlet-class>com.java.be.EditSP</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>EditSP</servlet-name>
-    <url-pattern>/EditSP</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
     <display-name>RSPServlet</display-name>
     <servlet-name>RSPServlet</servlet-name>
-    <servlet-class>com.java.be.RSPServlet</servlet-class>
+    <servlet-class>com.java.be.viewServlet.RSPServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>RSPServlet</servlet-name>
@@ -189,19 +49,49 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>DeleteRSP</display-name>
-    <servlet-name>DeleteRSP</servlet-name>
-    <servlet-class>com.java.be.DeleteRSP</servlet-class>
+    <display-name>SPServlet</display-name>
+    <servlet-name>SPServlet</servlet-name>
+    <servlet-class>com.java.be.viewServlet.SPServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>DeleteRSP</servlet-name>
-    <url-pattern>/DeleteRSP</url-pattern>
+    <servlet-name>SPServlet</servlet-name>
+    <url-pattern>/SPServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>StudentServlet</display-name>
+    <servlet-name>StudentServlet</servlet-name>
+    <servlet-class>com.java.be.viewServlet.StudentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StudentServlet</servlet-name>
+    <url-pattern>/StudentServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SubjectServlet</display-name>
+    <servlet-name>SubjectServlet</servlet-name>
+    <servlet-class>com.java.be.viewServlet.SubjectServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SubjectServlet</servlet-name>
+    <url-pattern>/SubjectServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddLecturer</display-name>
+    <servlet-name>AddLecturer</servlet-name>
+    <servlet-class>com.java.be.Controller.AddLecturer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddLecturer</servlet-name>
+    <url-pattern>/AddLecturer</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
     <display-name>AddRSP</display-name>
     <servlet-name>AddRSP</servlet-name>
-    <servlet-class>com.java.be.AddRSP</servlet-class>
+    <servlet-class>com.java.be.Controller.AddRSP</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AddRSP</servlet-name>
@@ -209,9 +99,99 @@
   </servlet-mapping>
   <servlet>
     <description></description>
+    <display-name>AddSP</display-name>
+    <servlet-name>AddSP</servlet-name>
+    <servlet-class>com.java.be.Controller.AddSP</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddSP</servlet-name>
+    <url-pattern>/AddSP</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddStudent</display-name>
+    <servlet-name>AddStudent</servlet-name>
+    <servlet-class>com.java.be.Controller.AddStudent</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddStudent</servlet-name>
+    <url-pattern>/AddStudent</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddSubject</display-name>
+    <servlet-name>AddSubject</servlet-name>
+    <servlet-class>com.java.be.Controller.AddSubject</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddSubject</servlet-name>
+    <url-pattern>/AddSubject</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteLecturer</display-name>
+    <servlet-name>DeleteLecturer</servlet-name>
+    <servlet-class>com.java.be.Controller.DeleteLecturer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteLecturer</servlet-name>
+    <url-pattern>/DeleteLecturer</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteRSP</display-name>
+    <servlet-name>DeleteRSP</servlet-name>
+    <servlet-class>com.java.be.Controller.DeleteRSP</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteRSP</servlet-name>
+    <url-pattern>/DeleteRSP</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteSP</display-name>
+    <servlet-name>DeleteSP</servlet-name>
+    <servlet-class>com.java.be.Controller.DeleteSP</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteSP</servlet-name>
+    <url-pattern>/DeleteSP</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteStudent</display-name>
+    <servlet-name>DeleteStudent</servlet-name>
+    <servlet-class>com.java.be.Controller.DeleteStudent</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteStudent</servlet-name>
+    <url-pattern>/DeleteStudent</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteSubject</display-name>
+    <servlet-name>DeleteSubject</servlet-name>
+    <servlet-class>com.java.be.Controller.DeleteSubject</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteSubject</servlet-name>
+    <url-pattern>/DeleteSubject</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EditLecturer</display-name>
+    <servlet-name>EditLecturer</servlet-name>
+    <servlet-class>com.java.be.Controller.EditLecturer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditLecturer</servlet-name>
+    <url-pattern>/EditLecturer</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
     <display-name>EditRSP</display-name>
     <servlet-name>EditRSP</servlet-name>
-    <servlet-class>com.java.be.EditRSP</servlet-class>
+    <servlet-class>com.java.be.Controller.EditRSP</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>EditRSP</servlet-name>
@@ -219,12 +199,32 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>LoginServlet</display-name>
-    <servlet-name>LoginServlet</servlet-name>
-    <servlet-class>com.java.be.LoginServlet</servlet-class>
+    <display-name>EditSP</display-name>
+    <servlet-name>EditSP</servlet-name>
+    <servlet-class>com.java.be.Controller.EditSP</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>LoginServlet</servlet-name>
-    <url-pattern>/LoginServlet</url-pattern>
+    <servlet-name>EditSP</servlet-name>
+    <url-pattern>/EditSP</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EditStudent</display-name>
+    <servlet-name>EditStudent</servlet-name>
+    <servlet-class>com.java.be.Controller.EditStudent</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditStudent</servlet-name>
+    <url-pattern>/EditStudent</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EditSubject</display-name>
+    <servlet-name>EditSubject</servlet-name>
+    <servlet-class>com.java.be.Controller.EditSubject</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditSubject</servlet-name>
+    <url-pattern>/EditSubject</url-pattern>
   </servlet-mapping>
 </web-app>
